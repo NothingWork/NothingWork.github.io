@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>气候变化与经济发展数据可视化</title>
+	<!-- <script type="text/javascript" src="js/jquery.js"></script> -->
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery-csv-1.0.21.js"></script>
+	<script type="text/javascript" src="js/jquery.csv.js"></script>
+	<!-- <script type="text/javascript" src="js/echarts.js"></script> -->
+	<script type="text/javascript" src="js/echarts.min.js"></script>
+	<script type="text/javascript" src="js/world.js"></script>
+	<!-- <script type="text/javascript" src="js/require.js"></script> -->
+
+
+	<!-- <script type="text/javascript" src="js/worldMap.js"></script> -->
+	<!-- <script src="js/jquery.min.map"></script> -->
+	<link rel="stylesheet" href="css/all.css">
+</head>
+
+<!--滑动条的样式-->
+<style>
+	.border-light {
+		border: 2px solid #EAEAEA;
+		box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+	}
+
+	.border-light:hover {
+		box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+	}
+
+
+	.range-slider::-webkit-slider-runnable-track {
+		width: 100%;
+		height: 10px;
+		background: #ddd;
+		border: none;
+		border-radius: 5px;
+	}
+
+	.range-slider::-webkit-slider-thumb {
+		-webkit-appearance: none;
+		border: none;
+		height: 20px;
+		width: 20px;
+		border-radius: 50%;
+		background-color: #399bff;
+		margin-top: -5px;
+	}
+
+	.range-slider::-moz-range-track {
+		width: 100%;
+		height: 10px;
+		background: #ddd;
+		border: none;
+		border-radius: 5px;
+	}
+
+	.range-slider::-moz-range-thumb {
+		border: none;
+		height: 20px;
+		width: 20px;
+		border-radius: 50%;
+		background-color: #399bff;
+		margin-top: -5px;
+	}
+</style>
+
+<body>
+
+
+	<div class="head" style="height: 82.5px;">
+		<h1>气候变化与经济发展</h1>
+	</div>
+	<div class="box">
+		<ul class="ul-1">
+			<li class="li-1" style="width: 15%;height: 100%;">
+				<div class="box-in">
+					<!-- 框 -->
+					<div class="win">
+						<!-- 四个角的边框效果 -->
+						<div class="border_corner border_corner_left_top"></div>
+						<div class="border_corner border_corner_right_top"></div>
+						<div class="border_corner border_corner_left_bottom"></div>
+						<div class="border_corner border_corner_right_bottom"></div>
+						<div class="main" style="height: 400px;"><!--在这里更改图表高度 上下加起来640px-->
+							<!-- 这里写内容 -->
+							<div class="title">
+								<h4>我是左侧控制台</h4>
+							</div>
+							<div style="padding-top: 14px;">
+								<h4>·全球气候变化</h4>
+							</div>
+							<div class="control">
+								<a href="#link1">世界各国污染排放变化</a>
+								<a href="#link2">气候变化具体表现</a>
+								<a href="#link3">气候变化危害</a>
+
+							</div>
+							<div style="padding-top: 14px;">
+								<h4>·全球应对</h4>
+							</div>
+							<div class="control">
+								<a href="#link1">主要国家当前政策</a>
+								<a href="#link2">经济发展状况</a>
+								<a href="#link3">我国应对</a>
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="box-in">
+					<!-- 框 -->
+					<div class="win">
+						<!-- 四个角的边框效果 -->
+						<div class="border_corner border_corner_left_top"></div>
+						<div class="border_corner border_corner_right_top"></div>
+						<div class="border_corner border_corner_left_bottom"></div>
+						<div class="border_corner border_corner_right_bottom"></div>
+						<div class="main" style="height: 240px;"><!--在这里更改图表高度 上下加起来640px-->
+							<!-- 这里写内容 -->
+							<div class="title">
+								<h4>我是左下小图表</h4>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</li>
+
+
+			<li class="li-1" style="width: 60%;height: 100%;">
+				<div class="box-in">
+					<!-- 框 -->
+					<div class="win">
+						<!-- 四个角的边框效果 -->
+						<div class="border_corner border_corner_left_top"></div>
+						<div class="border_corner border_corner_right_top"></div>
+						<div class="border_corner border_corner_left_bottom"></div>
+						<div class="border_corner border_corner_right_bottom"></div>
+						<div class="main" style="height: 400px;color: black;">
+							<!-- 标题和下拉菜单 -->
+							<div class="title"
+								style="display: flex; justify-content: space-between; align-items: center;">
+								<h4 style="color: black;">我是中间上面的图</h4>
+								<input type="range" id="yearSlider" min="1850" max="1947" step="1" style="width: 30%;"
+									oninput="setWorldMap(),setSankeyMap(),setNightingaleMap()">
+								<select id="gas-type">
+									<option value="CO2" selected="selected">CO2</option>
+									<option value="KYOTOGHG">KYOTOGHG</option>
+									<option value="CH4">CH4</option>
+									<option value="N2O">N2O</option>
+									<option value="F-Gas">F-Gas</option>
+								</select>
+							</div>
+							<!--世界地图主体-->
+							<div id="worldMap" style="height: 355px;"></div>
+							<script type="text/javascript" src="js/worldMap.js"></script>
+						</div>
+					</div>
+				</div>
+				<div class="box-in">
+					<!-- 框 -->
+					<div class="win">
+						<!-- 四个角的边框效果 -->
+						<div class="border_corner border_corner_left_top"></div>
+						<div class="border_corner border_corner_right_top"></div>
+						<div class="border_corner border_corner_left_bottom"></div>
+						<div class="border_corner border_corner_right_bottom"></div>
+						<div class="main" style="height: 240px;"><!--在这里更改图表高度-->
+							<!-- 这里写内容 -->
+							<div class="title">
+								<h4>我是中间下面的图</h4>
+							</div>
+							<!--SankeyMap-->
+							<div id="SankeyMap" style="height: 200px;"></div>
+							<script type="text/javascript" src="js/Sankey.js"></script>
+						</div>
+					</div>
+				</div>
+			</li>
+
+
+			<li class="li-1" style="width: 25%;height: 100%;">
+				<div class="box-in">
+					<!-- 框 -->
+					<div class="win">
+						<!-- 四个角的边框效果 -->
+						<div class="border_corner border_corner_left_top"></div>
+						<div class="border_corner border_corner_right_top"></div>
+						<div class="border_corner border_corner_left_bottom"></div>
+						<div class="border_corner border_corner_right_bottom"></div>
+						<div class="main" style="height: 400px;"><!--在这里更改图表高度 上下加起来640px-->
+							<!-- 这里写内容 -->
+							<div class="title">
+								<h4>我是右边上面的图</h4>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="box-in">
+					<!-- 框 -->
+					<div class="win">
+						<!-- 四个角的边框效果 -->
+						<div class="border_corner border_corner_left_top"></div>
+						<div class="border_corner border_corner_right_top"></div>
+						<div class="border_corner border_corner_left_bottom"></div>
+						<div class="border_corner border_corner_right_bottom"></div>
+						<div class="main" style="height: 240px;">
+							<!--在这里更改图表高度-->
+							<!-- 这里写内容 -->
+							<div class="title">
+								<h4>我是右边下面的图</h4>
+							</div>
+							<!--NightingaleMap-->
+							<div id="NightingaleMap" style="height: 210px;"></div>
+							<script type="text/javascript" src="js/Nightingale.js"></script>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+
+	</div>
+
+</body>
+
+
+
+
+
+</html>
