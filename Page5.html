@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+		<title>气候变化与全球应对数据可视化</title>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/echarts.min.js"></script>
+		<script src="./js/jquery-csv-1.0.21.js"></script>
+		<script src="./js/echarts.js"></script>
+		<!-- <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.2/dist/extension/dataTool.min.js"></script> -->
+		<!-- <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts-gl@2/dist/echarts-gl.min.js"></script> -->
+		<!-- <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts-stat@latest/dist/ecStat.min.js"></script> -->
+		<link rel="stylesheet" href="css/all.css">	
+		<meta http-equiv="X-Content-Type-Options" content="nosniff">
+
+	</head>
+	<body>
+
+		
+		<div class="head" style="height: 82.5px;">
+			<h1>气候变化与全球应对</h1>
+		</div>
+		<div class="box" >
+			<ul class="ul-1">
+				<li class="li-1" style="width: 15%;height: 100%;">
+					<div class="box-in" >
+						<!-- 框 -->
+						<div class="win" >
+						    <!-- 四个角的边框效果 -->
+						    <div class="border_corner border_corner_left_top"></div>
+						    <div class="border_corner border_corner_right_top"></div>
+						    <div class="border_corner border_corner_left_bottom"></div>
+						    <div class="border_corner border_corner_right_bottom"></div>
+						    <div class="main" style="height: 400px;"><!--在这里更改图表高度 上下加起来640px-->
+						        <!-- 这里写内容 -->
+								<div class="title">
+									<h4>控制台</h4>
+								</div>
+								<div style="padding-top: 14px;">
+									<h4>·气候变化</h4>
+								</div>
+								<div class="control" style="font-weight: normal;">
+									<a href="index.html">各国污染排放变化</a>
+									<a href="Page2.html">气候变化具体表现</a>
+									<a href="Page3.html">气候变化危害</a>
+	
+								</div>
+								<div style="padding-top: 14px;">
+									<h4>·全球应对</h4>
+								</div>
+								<div class="control" style="font-weight: normal;">
+									<a href="Page4.html">全球合作措施</a>
+									<a href="Page5.html">温室气体减排</a>
+									<a href="Page6.html">生态保护</a>
+								</div>
+								
+						    </div>
+						</div>
+					</div>
+					
+					<div class="box-in">
+						<!-- 框 -->
+						<div class="win">
+						    <!-- 四个角的边框效果 -->
+						    <div class="border_corner border_corner_left_top"></div>
+						    <div class="border_corner border_corner_right_top"></div>
+						    <div class="border_corner border_corner_left_bottom"></div>
+						    <div class="border_corner border_corner_right_bottom"></div>
+						    <div class="main" style="height: 240px;"><!--在这里更改图表高度 上下加起来640px-->
+						        <!-- 这里写内容 -->
+								<div class="title">
+									<h4>我是左下小图表</h4>
+								</div>
+								
+						    </div>
+						</div>
+					</div>
+				</li>
+				
+				
+				
+				
+				<li class="li-1" style="width: 65%;height: 100%;">
+					<div class="box-in" >
+						<!-- 框 -->
+						<div class="win">
+						    <!-- 四个角的边框效果 -->
+						    <div class="border_corner border_corner_left_top"></div>
+						    <div class="border_corner border_corner_right_top"></div>
+						    <div class="border_corner border_corner_left_bottom"></div>
+						    <div class="border_corner border_corner_right_bottom"></div>
+						    <div class="main" style="height: 230px;"><!--在这里更改图表高度 上下加起来640px-->
+						        <!-- 这里写内容 -->
+								<div class="title">
+									<h4>可再生能源与石油、天然气和煤炭能源以及其他能源的发电量占比</h4>
+								</div>
+								<div id="powerChart" style="height: 400px;width: 800px;margin: 0;padding:0px;"></div>
+								<script type="text/javascript" src="js/GHGreduction1 copy.js"></script>
+								
+						    </div>
+						</div>
+					</div>
+					<div class="box-in" >
+						<!-- 框 -->
+						<div class="win">
+						    <!-- 四个角的边框效果 -->
+						    <div class="border_corner border_corner_left_top"></div>
+						    <div class="border_corner border_corner_right_top"></div>
+						    <div class="border_corner border_corner_left_bottom"></div>
+						    <div class="border_corner border_corner_right_bottom"></div>
+						    <div class="main" style="height: 410px;"><!--在这里更改图表高度-->
+						        <!-- 这里写内容 -->
+								<div class="title">
+									<h4>六国三大温室气体排放</h4>
+								</div>
+								<div id="SunburstMap" style="height: 355px;"></div>
+								<script type="text/javascript" src="js/SunburstMap.js"></script>
+						    </div>
+						</div>
+					</div>
+				</li>
+				
+				
+				<li class="li-1" style="width: 20%;height: 100%;">
+					<div class="box-in" >
+						<!-- 框 -->
+						<div class="win">
+						    <!-- 四个角的边框效果 -->
+						    <div class="border_corner border_corner_left_top"></div>
+						    <div class="border_corner border_corner_right_top"></div>
+						    <div class="border_corner border_corner_left_bottom"></div>
+						    <div class="border_corner border_corner_right_bottom"></div>
+						    <div class="main" style="height: 276px;"><!--在这里更改图表高度 上下加起来640px-->
+						        <!-- 这里写内容 -->
+								<div class="title">
+									<h4>六国加入巴黎协定时间</h4>
+								</div>
+								<table class="countryTable6" border="0" cellspacing="2" style="line-height: 10px;">
+									<table>
+										<tr>
+										  <td>美国</td>
+										  <td>2016年9月3日</td>
+										</tr>
+										<tr>
+										  <td>英国</td>
+										  <td>2016年11月18日</td>
+										</tr>
+										<tr>
+										  <td>中国</td>
+										  <td>2016年9月3日</td>
+										</tr>
+										<tr>
+										  <td>印度</td>
+										  <td>2016年10月2日</td>
+										</tr>
+										<tr>
+										  <td>俄罗斯</td>
+										  <td>2019年9月23日</td>
+										</tr>
+										<tr>
+										  <td>日本</td>
+										  <td>2016年11月8日</td>
+										</tr>
+									  </table>
+								  </table>
+						    </div>
+						</div>
+					</div>
+					<div class="box-in" >
+						<!-- 框 -->
+						<div class="win">
+						    <!-- 四个角的边框效果 -->
+						    <div class="border_corner border_corner_left_top"></div>
+						    <div class="border_corner border_corner_right_top"></div>
+						    <div class="border_corner border_corner_left_bottom"></div>
+						    <div class="border_corner border_corner_right_bottom"></div>
+						    <div class="main" style="height: 364px;"><!--在这里更改图表高度-->
+						        <!-- 这里写内容 -->
+								<div class="title" style="display: flex;">
+									<h4>六国新闻</h4>
+									<select id="countrySelect" style="margin-left: 70px;">
+										<option value="US">美国</option>
+										<option value="UK">英国</option>
+										<option value="China">中国</option>
+										<option value="India">印度</option>
+										<option value="Ru">俄罗斯</option>
+										<option value="Japan">日本</option>
+									</select>
+								</div>
+								<div id="countryInfo" style="padding:14px;color:#ec9bad;">
+									<!-- <img id="countryImage" src="china.jpg" alt="China Image"> -->
+								</div>
+
+						    </div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+		</div>
+		
+		
+	</body>
+</html>
+<style>
+	table {
+  	border-collapse: collapse;
+  	width: 100%;
+}
+
+	td, th {
+	border: 1px solid #ddd;
+	padding: 8px;
+	}
+
+	tr:nth-child(even) {
+	background-color: #61ac85;
+	}
+
+	tr:nth-child(odd) {
+	background-color: #eef7f2;
+	}
+
+	select {
+  color: #2bae85; /*设置字体颜色为白色*/
+  background-color: #eef7f2; /*设置背景颜色为绿色*/
+  border-color: #30a99d; /*设置边框颜色为绿色*/
+  /* border: 1px; */
+}
+
+</style>
+
+<script>
+		// 获取选择框和信息框的元素
+	const countrySelect = document.getElementById("countrySelect");
+	const countryInfo = document.getElementById("countryInfo");
+
+	// 定义一个对象，存储不同国家对应的信息
+	const countryData = {
+		US:{
+			txt:"美国拜登政府重申该国承诺到2030年将将温室气体排放量减少50-52%的目标，相对于2005年水平减少"
+		},
+		UK:{
+			txt:"英国政府设立了目标在2040年前实现零排放。自2020年以来，英国自愿承诺早于欧盟的2045年将减排目标提高至78%"
+		},
+		China: {
+			txt:"中国政府承诺在2030年前，二氧化碳排放强度将下降65%"
+		},
+		India: {
+			txt:"印度计划在2030年前将非化石能源产生额度占到总能源生产额度的40%"
+		},
+		Ru:{
+			txt:"俄罗斯的目标是到2050年将温室气体排放水平减少到1990年的一半，承诺到2030年减少30%的温室气体排放量"
+		},
+		Japan:{
+			txt:"日本政府计划在2030年前将温室气体排放量减少26%（相对于2013年水平）"
+		}
+	};
+
+	// 创建一个函数，用于根据选择的国家更新信息
+	function updateCountryInfo() {
+	// 获取选择框当前选中的值
+	const selectedCountry = countrySelect.value;
+	
+	// 根据选中的国家获取相应的信息
+	const country = countryData[selectedCountry];
+	
+	// 更新信息框的内容
+	countryInfo.innerHTML = `
+		<h2>${country.txt}</h2>`;
+	}
+
+	// 添加一个事件监听器，用于在选择框选中的值发生改变时更新下方的信息
+	countrySelect.addEventListener("change", updateCountryInfo);
+
+	// 初始化页面时，显示默认选中的国家的信息
+	updateCountryInfo();
+</script>

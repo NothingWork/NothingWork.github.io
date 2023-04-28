@@ -278,12 +278,15 @@ function Radar(){
                 textStyle: {
                 color: 'rgba(221,221,221,1)',
                 fontSize: 14,
-                lineHeight: 20,
+                lineHeight: 10,
                 },
                 left: 'center',
                 top: 'bottom',
 
             },
+            width: 300,  // 画布宽度为 800 像素
+            height: 300, 
+
             color: ['#7BFF00', '#FFE434', '#56A3F1', '#FF917C','#8EFF74','#FB00FF'],
                 // 图表位置
             grid: {

@@ -13,6 +13,9 @@
 	<!-- <script type="text/javascript" src="js/echarts.js"></script> -->
 	<script type="text/javascript" src="js/echarts.min.js"></script>
 	<script type="text/javascript" src="js/world.js"></script>
+	<script type="text/javascript" src="js/china.js"></script>
+	<script type="text/javascript" src="js/echart3.js"></script>
+	<script type="text/javascript" src="js/echarts-wordcloud.js"></script>
 	<!-- <script type="text/javascript" src="js/require.js"></script> -->
 
 
@@ -20,54 +23,6 @@
 	<!-- <script src="js/jquery.min.map"></script> -->
 	<link rel="stylesheet" href="css/all.css">
 </head>
-
-<!--滑动条的样式-->
-<style>
-	.border-light {
-		border: 2px solid #EAEAEA;
-		box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-	}
-
-	.border-light:hover {
-		box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
-	}
-
-
-	.range-slider::-webkit-slider-runnable-track {
-		width: 100%;
-		height: 10px;
-		background: #ddd;
-		border: none;
-		border-radius: 5px;
-	}
-
-	.range-slider::-webkit-slider-thumb {
-		-webkit-appearance: none;
-		border: none;
-		height: 20px;
-		width: 20px;
-		border-radius: 50%;
-		background-color: #399bff;
-		margin-top: -5px;
-	}
-
-	.range-slider::-moz-range-track {
-		width: 100%;
-		height: 10px;
-		background: #ddd;
-		border: none;
-		border-radius: 5px;
-	}
-
-	.range-slider::-moz-range-thumb {
-		border: none;
-		height: 20px;
-		width: 20px;
-		border-radius: 50%;
-		background-color: #399bff;
-		margin-top: -5px;
-	}
-</style>
 
 <body>
 
@@ -108,86 +63,18 @@
 								<a href="Page5.html">温室气体减排</a>
 								<a href="Page6.html">生态保护</a>
 							</div>
+
 						</div>
 					</div>
 				</div>
 
-				<div class="box-in">
-					<!-- 框 -->
-					<div class="win">
-						<!-- 四个角的边框效果 -->
-						<div class="border_corner border_corner_left_top"></div>
-						<div class="border_corner border_corner_right_top"></div>
-						<div class="border_corner border_corner_left_bottom"></div>
-						<div class="border_corner border_corner_right_bottom"></div>
-						<div class="main" style="height: 240px;"><!--在这里更改图表高度 上下加起来640px-->
-							<!-- 这里写内容 -->
-							<div class="title">
-								<h4>六国空气污染排放</h4>
-							</div>
-							<div id="countryEmissionRadar" style="height: 80%;width: auto;border: 20px;margin:8px auto;" >
-							<!-- <div id="countryEmissionRadar" style="height: 220px;width: auto;border: 20px;margin:5px auto;" > -->
-
-							</div>
-						</div>
-					</div>
-				</div>
+				
 			</li>
 
 
-			<li class="li-1" style="width: 60%;height: 100%;">
-				<div class="box-in">
-					<!-- 框 -->
-					<div class="win">
-						<!-- 四个角的边框效果 -->
-						<div class="border_corner border_corner_left_top"></div>
-						<div class="border_corner border_corner_right_top"></div>
-						<div class="border_corner border_corner_left_bottom"></div>
-						<div class="border_corner border_corner_right_bottom"></div>
-						<div class="main background1" style="height: 400px;color: black;">
-							<!-- 标题和下拉菜单 -->
-							<div class="title"
-								style="display: flex; justify-content: space-between; align-items: center;">
-								<h4 style="color: black;">空气污染排放热力图</h4>
-								<input type="range" id="yearSlider" min="1850" max="1947" step="1" style="width: 30%;"
-									oninput="setWorldMap(),setSankeyMap(),setNightingaleMap(),Radar()">
-								<select id="gas-type">
-									<option value="CO2" selected="selected">CO2</option>
-									<option value="KYOTOGHG">KYOTOGHG</option>
-									<option value="CH4">CH4</option>
-									<option value="N2O">N2O</option>
-									<option value="F-Gas">F-Gas</option>
-								</select>
-							</div>
-							<!--世界地图主体-->
-							<div id="worldMap" style="height: 355px;"></div>
-							<script type="text/javascript" src="js/worldMap.js"></script>
-						</div>
-					</div>
-				</div>
-				<div class="box-in">
-					<!-- 框 -->
-					<div class="win">
-						<!-- 四个角的边框效果 -->
-						<div class="border_corner border_corner_left_top"></div>
-						<div class="border_corner border_corner_right_top"></div>
-						<div class="border_corner border_corner_left_bottom"></div>
-						<div class="border_corner border_corner_right_bottom"></div>
-						<div class="main" style="height: 240px;"><!--在这里更改图表高度-->
-							<!-- 这里写内容 -->
-							<div class="title">
-								<h4>空气污染占比</h4>
-							</div>
-							<!--SankeyMap-->
-							<div id="SankeyMap" style="height: 200px;"></div>
-							<script type="text/javascript" src="js/Sankey.js"></script>
-						</div>
-					</div>
-				</div>
-			</li>
 
 
-			<li class="li-1" style="width: 25%;height: 100%;">
+			<li class="li-1" style="width: 50%;height: 100%;">
 				<div class="box-in">
 					<!-- 框 -->
 					<div class="win">
@@ -199,14 +86,18 @@
 						<div class="main" style="height: 400px;"><!--在这里更改图表高度 上下加起来640px-->
 							<!-- 这里写内容 -->
 							<div class="title">
-								<h4>全球总污染排放</h4>
+								<h4>全球气候风险指数</h4>
 							</div>
-							<!--LineMap-->
-							<div id="LineMap" style="height: 355px;margin-left: 15px;"></div>
-							<script type="text/javascript" src="js/LineMap.js"></script>
+							<div id="worldMapOfDisaster" style="height: 355px;"></div>
+							<script type="text/javascript" src="js/worldMapOfDisaster.js"></script>
 						</div>
 					</div>
 				</div>
+				
+			</li>
+
+
+			<li class="li-1" style="width: 35%;height: 100%;">
 				<div class="box-in">
 					<!-- 框 -->
 					<div class="win">
@@ -215,29 +106,78 @@
 						<div class="border_corner border_corner_right_top"></div>
 						<div class="border_corner border_corner_left_bottom"></div>
 						<div class="border_corner border_corner_right_bottom"></div>
-						<div class="main" style="height: 240px;">
-							<!--在这里更改图表高度-->
+						<div class="main" style="height: 400px;"><!--在这里更改图表高度 上下加起来640px-->
 							<!-- 这里写内容 -->
 							<div class="title">
-								<h4>某一空气污染占比</h4>
+								<h4>典型国家海平面上升情况</h4>
 							</div>
-							<!--NightingaleMap-->
-							<div id="NightingaleMap" style="height: 210px;"></div>
-							<script type="text/javascript" src="js/Nightingale.js"></script>
+							<div id="barMap" style="height: 355px;"></div>
+
 						</div>
 					</div>
 				</div>
+
 			</li>
 		</ul>
+		<ul style="display: flex;">
+			<li style="width: 100%;height: 140px;">
+				<div style="background-color: #db2a1c;">
+					<p
+						style="color:#ffffff ; font-size: 30px ;font-weight: bold;text-align: left;">
+						超过<span style="font-size: 45px;">42,100</span>种物种面临灭绝的威胁
+					</p>
+					<span style="color:#ffffff ; font-size: 26px;">
+						这仅是估算物种的28%
+					</span>
+					<br>
+					<div style="width: 100%;height:30px;">
+						<p class="imgstyle">
+							<img width="100%" src="img/濒危.png">
+						</p>
+		
+					</div>
+				</div>
 
+			</li>
+			<li>
+				<div class="box-in">
+					<!-- 框 -->
+					<div class="win">
+						<!-- 四个角的边框效果 -->
+						<div class="border_corner border_corner_left_top"></div>
+						<div class="border_corner border_corner_right_top"></div>
+						<div class="border_corner border_corner_left_bottom"></div>
+						<div class="border_corner border_corner_right_bottom"></div>
+						<div class="main" style="height: 240px;"><!--在这里更改图表高度-->
+							<!-- 这里写内容 -->
+							<div class="title">
+								<h4>1900-2020年灾害导致的经济损失</h4>
+							</div>
+							<div id="pointMap" style="height: 200px;width: 200px;"></div>
+							<script type="text/javascript" src="js/PointMap.js"></script>
+						</div>
+					</div>
+				</div>
+
+			</li>
+		</ul>
+		
 	</div>
 
+
 </body>
-
-
-
-
+<script type="text/javascript" src="js/BarMap.js"></script>
 
 </html>
 
-<script type="text/javascript" src="js/EmissionRadar.js"></script>
+<style>
+	.imgstyle{
+		display: flex;
+  		width: 100%;
+  		height: 160px;
+	}
+	img {
+  object-fit: cover;
+  object-position: center;
+}
+</style>

@@ -9,8 +9,8 @@ yearSlider.addEventListener("input", function () {
     console.log(yearValue)
 });
 
-
-gasSelect.addEventListener('change', function () {
+const gasSelectForSankey = document.getElementById('gas-type');
+gasSelectForSankey.addEventListener('change', function () {
     gasValue = this.value;
     console.log(gasValue)
 });
@@ -52,6 +52,7 @@ function setSankeyMap() {
                 var sankeyMap = echarts.init(document.getElementById('SankeyMap'));
 
                 var optionForSankeyMap = {
+                    color: ['#FF4136', '#FF851B', '#FFDC00', '#2ECC40', '#0074D9', '#B10DC9', '#F012BE', '#3D9970', '#39CCCC', '#01FF70', '#85144b', '#7FDBFF'],
                     tooltip: {
                         trigger: 'item',
                         triggerOn: 'mousemove'
@@ -63,44 +64,32 @@ function setSankeyMap() {
                             focus: 'adjacency'
                         },
                         data: [
-                            {
-                                name: 'SUM'
-                            },
-                            {
-                                name: 'CO2'
-                            },
-                            {
-                                name: 'CH4'
-                            },
-                            {
-                                name: 'N2O'
-                            },
-                            {
-                                name: 'F-Gas'
-                            },
-                            {
-                                name: 'KYOTOGHG'
-                            },
-                            {
-                                name: 'Total excluding LULUCF'
-                            },
-                            {
-                                name: 'Agriculture'
-                            },
-                            {
-                                name: 'Energy'
-                            },
-                            {
-                                name: 'Other'
-                            },
-                            {
-                                name: 'Industrial Processes and Product Use'
-                            },
-                            {
-                                name: 'Waste'
-                            }
+                            { name: 'SUM', itemStyle: { color: '#FF4136' } },
+                            { name: 'CO2', itemStyle: { color: '#FF851B' } },
+                            { name: 'CH4', itemStyle: { color: '#FFDC00' } },
+                            { name: 'N2O', itemStyle: { color: '#2ECC40' } },
+                            { name: 'F-Gas', itemStyle: { color: '#0074D9' } },
+                            { name: 'KYOTOGHG', itemStyle: { color: '#B10DC9' } },
+                            { name: 'Total excluding LULUCF', itemStyle: { color: '#F012BE' } },
+                            { name: 'Agriculture', itemStyle: { color: '#3D9970' } },
+                            { name: 'Energy', itemStyle: { color: '#39CCCC' } },
+                            { name: 'Other', itemStyle: { color: '#01FF70' } },
+                            { name: 'Industrial Processes and Product Use', itemStyle: { color: '#85144b' } },
+                            { name: 'Waste', itemStyle: { color: '#7FDBFF' } }
                         ],
-                        links: dataArr
+                        links: dataArr,
+                        lineStyle: {
+                            normal: {
+                                color: {
+                                    type: 'linear',
+                                    colorStops: [
+                                        { offset: 0, color: '#FF4136' },
+                                        { offset: 1, color: '#0074D9' }
+                                    ]
+                                },
+                                curveness: 0.8
+                            }
+                        }
                     }]
                 };
                 sankeyMap.setOption(optionForSankeyMap);
@@ -109,7 +98,7 @@ function setSankeyMap() {
     }
 
 }
-
+setSankeyMap();
 
 
 

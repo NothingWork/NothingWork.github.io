@@ -1,24 +1,19 @@
-
-//显示地图
 var Country = []
-var Temp = []
-var province = []
-var tempForChina = []
+var Disaster = []
 
-
-function setWorldMapOfTemp() {
+function setWorldMapOfDisaster() {
     $.ajax({
-        url: 'dataset/avg_world_temp_2020.csv',
+        url: 'dataset/2000年全球灾害数据.csv',
         type: 'GET',
         async: true,
         success: function (testData) {
             var m = $.csv.toArrays(testData, {
                 delimiter: ","
             })
-            // console.log(m);
+            console.log(m);
             for (let j = 0; j < m.length; j++) {
                 Country[j] = m[j][0];
-                Temp[j] = m[j][1];
+                Disaster[j] = m[j][2];
             }
             var translateObj = {
                 "Afghanistan": "阿富汗",
@@ -214,18 +209,18 @@ function setWorldMapOfTemp() {
             };
             var dataArr = [];
             for (let i = 0; i < Country.length; i++) {
-                const tempDataObj = {
+                const disasterDataObj = {
                     name: translateObj[Country[i]], // 查找对应的中文名称并使用它
-                    value: Temp[i]
+                    value: Disaster[i]
                 };
-                dataArr.push(tempDataObj);
+                dataArr.push(disasterDataObj);
             }
-            var worldMapOfTemp = echarts.init(document.getElementById('worldMapOfTemp'));
+            var worldMapOfDisaster = echarts.init(document.getElementById('worldMapOfDisaster'));
 
-            var optionForWorldMapOfTemp = {
+            var optionForWorldMapOfDisaster = {
                 visualMap: {
-                    min: -3,
-                    max: 40,
+                    min: 0,
+                    max: 800,
                     text: ['High', 'Low'],
                     realtime: false,
                     calculable: true,
@@ -233,7 +228,7 @@ function setWorldMapOfTemp() {
                 },
                 series: [
                     {
-                        name: 'World Temperature',
+                        name: 'World Disaster',
                         type: 'map',
                         mapType: 'world',
                         roam: true,
@@ -269,92 +264,14 @@ function setWorldMapOfTemp() {
                 },
 
             };
-            worldMapOfTemp.setOption(optionForWorldMapOfTemp);
-            worldMapOfTemp.on('click', (params) => {
-                if (params.name == '中国') {
-                    enterChinaMap()
-                }
-            })
+            worldMapOfDisaster.setOption(optionForWorldMapOfDisaster);
+            // worldMapOfTemp.on('click', (params) => {
+            //     if (params.name == '中国') {
+            //         enterChinaMap()
+            //     }
+            // })
         }
     });
 
 }
-function enterChinaMap() {
-    $.ajax({
-        url: './dataset/2000年各省平均气温.csv', // 获取data文件夹里2019年30个省份排放清单全部数据
-        type: 'GET',
-        async: true,
-        success: function (testData) {
-            var m = $.csv.toArrays(testData, {
-                delimiter: ","
-            })
-            console.log(m)
-            for (let j = 0; j < m.length; j++) {
-                province[j] = m[j][0]
-                tempForChina[j] = m[j][1]
-            }
-            var dataArr = [];
-            for (let i = 0; i < province.length; i++) {
-                const chinaTempDataObj = {
-                    name: province[i],
-                    value: tempForChina[i]
-                }
-                dataArr.push(chinaTempDataObj); // 添加新的对象到数组中
-            }
-            //中国地图部分
-            var worldMapOfTemp = echarts.init(document.getElementById('worldMapOfTemp'));
-            var optionForChina = {
-                title: {
-                    x: 'center',
-                    textStyle: {
-                        color: '#ffffff'
-                    }
-                },
-                tooltip: {
-                    trigger: 'item'
-                },
-                visualMap: {
-                    min: 0,
-                    max: 30,
-                    text: ['高', '低'],
-                    realtime: false,
-                    calculable: false,
-                    color: ['red', 'orange', 'white']
-                },
-                series: [{
-                    name: '碳排放量',
-                    type: 'map',
-                    mapType: 'china',
-                    roam: false,
-                    label: {
-                        normal: {
-                            show: true,
-                            color: '#000000'
-                        },
-                        emphasis: {
-                            show: true,
-                            color: '#38B0DE '
-                        }
-                    },
-                    itemStyle: {
-                        emphasis: {
-                            borderWidth: .5,
-                            borderColor: '#4b0082',
-                            areaColor: "#ece39e",
-                        }
-                    },
-                    data: dataArr
-                }],
-            };
-            worldMapOfTemp.setOption(optionForChina);
-            worldMapOfTemp.getZr().on('click', function (event) {
-                // 没有 target 意味着鼠标/指针不在任何一个图形元素上，它是从“空白处”触发的。
-                if (!event.target) {
-                    // 点击在了空白处，做些什么。
-                    setWorldMapOfTemp()
-                }
-            });
-        }
-    })
-}
-setWorldMapOfTemp();
+setWorldMapOfDisaster();
