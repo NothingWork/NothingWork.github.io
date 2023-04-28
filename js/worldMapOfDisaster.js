@@ -219,8 +219,8 @@ function setWorldMapOfDisaster() {
 
             var optionForWorldMapOfDisaster = {
                 visualMap: {
-                    min: 0,
-                    max: 800,
+                    min: -3,
+                    max: 40,
                     text: ['High', 'Low'],
                     realtime: false,
                     calculable: true,

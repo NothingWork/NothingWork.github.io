@@ -193,7 +193,7 @@ $.ajax({
       backgroundColor:'#e7e7e9',
       legend: {
         show:true,
-        data: ['可再生能源', '石油、天然气和煤炭能源', '其他能源'],
+        // data: ['可再生能源', '石油、天然气和煤炭能源', '其他能源'],
         bottom:500,
         left:'center',
         // padding: [30, 20, 20, 30], // 顺序为 上右下左

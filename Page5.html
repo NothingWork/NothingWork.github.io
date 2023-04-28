@@ -37,7 +37,7 @@
 								<div class="title">
 									<h4>控制台</h4>
 								</div>
-								<div style="padding-top: 14px;">
+								<div style="padding-top: 6px;">
 									<h4>·气候变化</h4>
 								</div>
 								<div class="control" style="font-weight: normal;">
@@ -46,13 +46,18 @@
 									<a href="Page3.html">气候变化危害</a>
 	
 								</div>
-								<div style="padding-top: 14px;">
+								<div style="padding-top: 6px;">
 									<h4>·全球应对</h4>
 								</div>
 								<div class="control" style="font-weight: normal;">
 									<a href="Page4.html">全球合作措施</a>
 									<a href="Page5.html">温室气体减排</a>
 									<a href="Page6.html">生态保护</a>
+								</div>
+								<div style="padding-top: 6px;">
+									<div class="control" style="font-weight: normal;">
+										<a class="h4" href="Page7.html">我国应对</a>
+									</div>
 								</div>
 								
 						    </div>
@@ -69,10 +74,16 @@
 						    <div class="border_corner border_corner_right_bottom"></div>
 						    <div class="main" style="height: 240px;"><!--在这里更改图表高度 上下加起来640px-->
 						        <!-- 这里写内容 -->
-								<div class="title">
-									<h4>我是左下小图表</h4>
+								<div class="title" style="display: flex;">
+									<h4>能源发电量占比</h4>
+									<!-- <button id="big" style="margin: 2px;margin-left: 15px;"  href="test1.html">  + </button> -->
+									<button onclick="window.location.href='能源发电量占比趋势图.html'" type="button" id="add">+</button>
 								</div>
-								
+								<div id="bubbleEnergy" style="height: 150px;width: 130px;">
+
+								</div>
+								<script type="text/javascript" src="js/5bubble.js"></script>
+
 						    </div>
 						</div>
 					</div>
@@ -134,33 +145,33 @@
 						    <div class="main" style="height: 276px;"><!--在这里更改图表高度 上下加起来640px-->
 						        <!-- 这里写内容 -->
 								<div class="title">
-									<h4>六国加入巴黎协定时间</h4>
+									<h4>六国加入京都议定书时间</h4>
 								</div>
-								<table class="countryTable6" border="0" cellspacing="2" style="line-height: 10px;">
-									<table>
+								<table class="countryTable6" border="0" cellspacing="2" style="line-height: 6px;">
+									<table style="font-size: 18px;line-height: 18px;">
 										<tr>
-										  <td>美国</td>
-										  <td>2016年9月3日</td>
+										  <td style="width: 80px;">美国</td>
+										  <td style="font-size: 16px;">在1998年加入，于2001年退出</td>
 										</tr>
 										<tr>
-										  <td>英国</td>
-										  <td>2016年11月18日</td>
+										  <td style="width: 80px;">中国</td>
+										  <td style="font-size: 18px;">2005年</td>
 										</tr>
 										<tr>
-										  <td>中国</td>
-										  <td>2016年9月3日</td>
+										  <td style="width: 80px;">英国</td>
+										  <td style="font-size: 18px;">1997年</td>
 										</tr>
 										<tr>
-										  <td>印度</td>
-										  <td>2016年10月2日</td>
+										  <td style="width: 80px;"> 印度</td>
+										  <td style="font-size: 18px;">1997年</td>
 										</tr>
 										<tr>
-										  <td>俄罗斯</td>
-										  <td>2019年9月23日</td>
+										  <td style="width: 80px;">日本</td>
+										  <td style="font-size: 18px;">1998年</td>
 										</tr>
 										<tr>
-										  <td>日本</td>
-										  <td>2016年11月8日</td>
+										  <td style="width: 80px;">俄罗斯</td>
+										  <td style="font-size: 18px;">2004年</td>
 										</tr>
 									  </table>
 								  </table>

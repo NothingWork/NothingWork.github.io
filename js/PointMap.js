@@ -23,16 +23,46 @@ $.ajax({
                     type: 'value',
                     min: 1900,
                     max: 2020,
-                    interval: 50,
+                    interval: 40,
+                    axisLine:{
+                        lineStyle:{
+                            color:'#1b645d',//更改坐标轴颜色
+                            width:1,
+                        },
+                    },
                     axisLabel: {
-                        formatter: '{value}'
-                    }
+                        formatter: '{value}',
+                        rotate: 30, // 设置标签旋转角度
+
+                        textStyle: {
+                            color: '#1b645d',  //更改坐标轴文字颜色
+                            fontSize: 12      //更改坐标轴文字大小
+                        }
+                    },
+                    
+
                 },
                 yAxis: {
                     type: 'value',
+                    name:'千亿美元',
+                    axisLine: { // 添加 axisLine 属性
+                        lineStyle: {
+                            color: '#1b645d', // 更改坐标轴颜色
+                            width: 1,
+                        },
+                    },
                     axisLabel: {
-                        formatter: '{value}'
-                    }
+                        formatter: '{value}',
+                        textStyle: {
+                            color: '#1b645d',  //更改坐标轴文字颜色
+                            fontSize: 12      //更改坐标轴文字大小
+                        },
+                    },
+                    splitLine: {
+                        lineStyle: { 
+                            color: "#1b645d",//线条颜色
+                        } 
+                    },
                 },
                 grid:{
                     right:"5%",
@@ -41,7 +71,11 @@ $.ajax({
                 },
                 tooltip: {
                     trigger: 'axis',
-                    
+                    // formatter: function(params) {
+                    //     console.log("params"+params)
+                    //     return params.name + '年<br/>' + params.value[1] + '千亿美元';
+                    //     // 在 x 轴数据后面添加 '年' 字，例如：1970年
+                    // }
                 },
                 // tooltip: {
                 //     formatter: function (params) {

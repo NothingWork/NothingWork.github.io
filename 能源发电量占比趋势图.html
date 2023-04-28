@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>气候变化与全球应对</title>
+  <!-- 引入 echarts.min.js 文件 -->
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/echarts.min.js"></script>
+  <script src="./js/jquery-csv-1.0.21.js"></script>
+  <script src="./js/echarts.js"></script>
+  <link rel="stylesheet" href="css/all.css">	
+
+</head>
+<body>
+  <head>
+    <div class="head1">
+      <a  href="Page5.html" style="font-size:25px;padding-left: 400px;">能源发电量占比趋势图</a>
+
+    </div>
+
+  </head>
+    <div id="bubbleEnergy" style="height: 600px;width: 1000px;padding-left: 40px;">
+
+    </div>
+    <script>
+        
+         // 数据
+    var data_world = [1.31, 1.03, 1.13, 1.14, 1.18, 1.18, 1.18, 1.22, 1.25, 1.32, 1.40, 1.44, 1.56, 1.65, 1.80];
+    var data_usa = [3.00, 1.90, 2.14, 2.13, 2.13, 1.97, 1.97, 1.90, 1.83, 1.89, 1.92, 1.88, 2.01, 2.02, 2.09];
+    var data_uk = [0.19, 0.22, 0.30, 0.44, 0.57, 0.61, 0.66, 0.80, 0.98, 1.17, 1.30, 1.44, 1.65, 1.87, 2.38];
+    var data_china = [0.01, 0.01, 0.02, 0.02, 0.05, 0.31, 0.15, 0.26, 0.25, 0.24, 0.23, 0.23, 0.21, 0.19, 0.18];
+
+
+    var myChart2 = echarts.init(document.getElementById('bubbleEnergy'));
+
+        
+    // 石油、天然气和煤炭能源的发电量数据
+    var world_data = [64.05, 64.58, 65.79, 65.46, 65.72, 66.05, 67.17, 66.79, 66.08, 66.28, 66.96, 66.79, 66.28, 65.60, 65.20];
+    var usa_data = [72.20, 70.99, 71.29, 71.39, 72.10, 71.33, 71.97, 71.39, 69.45, 70.28, 68.42, 68.86, 67.82, 67.46, 67.08];
+    var uk_data = [73.28, 73.52, 74.17, 75.39, 74.43, 75.61, 78.46, 80.22, 74.23, 76.38, 71.07, 68.47, 64.59, 60.97, 53.18];
+    var china_data = [79.86, 80.86, 82.69, 81.49, 81.70, 82.49, 82.84, 80.29, 80.25, 79.40, 81.17, 77.86, 77.42, 74.82, 72.96];
+
+    // 年份
+    var years = Array.from(Array(15).keys()).map(function(item) {
+      return item + 1990;
+    });
+
+    // 图表数据
+    var data = [
+      {
+        name: '世界',
+        data: world_data
+      },
+      {
+        name: '美国',
+        data: data_usa
+      },
+      {
+        name: '英国',
+        data: data_uk
+      },
+      {
+        name: '中国',
+        data: data_china
+      }
+    ];
+    // 图表数据
+    var data2 = [
+      {
+        name: '世界',
+        data: data_world
+      },
+      {
+        name: '美国',
+        data: usa_data
+      },
+      {
+        name: '英国',
+        data: uk_data
+      },
+      {
+        name: '中国',
+        data: china_data
+      }
+    ];
+
+    // 图表配置
+    var option = {
+      title: {
+        // text: '能源发电量占比趋势图',
+        left: 'center'
+      },
+      legend: {
+        // data: ['石油、天然气和煤炭能源占比', '可再生能源占比'],
+        data: ['世界', '美国', '英国', '中国'],
+        top: 30,
+        left: 10
+      },
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+          type: 'shadow'
+        }
+      },
+      grid: {
+        top: '20%',
+        left: '2%',
+        right: '2%',
+        bottom: '10%',
+        containLabel: true
+      },
+      xAxis: {
+        type: 'category',
+        data: years,
+        boundaryGap: false
+      },
+      yAxis: {
+        type: 'value',
+        name: '%'
+      },
+      series: data.map(function(item) {
+        return {
+          name: item.name,
+          type: 'line',
+          data: item.data.map(function(value) {
+            return value.toFixed(2);
+          })
+        };
+      }),
+      // series: data.map(function(item) {
+      //   return {
+      //     name: item.name,
+      //     type: 'line',
+      //     data: item.data.map(function(value) {
+      //       return value.toFixed(2);
+      //     })
+      //   };
+      // })
+    };
+    option.series = option.series.concat(data2.map(function(item) {
+      return {
+        name: item.name,
+        type: 'line',
+        data: item.data.map(function(value) {
+          return value.toFixed(2);
+        })
+      };
+    }));
+    // 初始化图表
+    myChart2.setOption(option);
+
+
+
+    </script>
+</body>
+</html>
