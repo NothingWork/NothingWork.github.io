@@ -1,0 +1,19 @@
+.gradient-border {
+    --color-1: rebeccapurple;
+    --color-2: crimson;
+    --border-radius: 1.25rem;
+    --border-width: 0.5rem;
+    width: 100%;
+    padding: 2rem;
+    position: relative;
+    border-radius: var(--border-radius);
+  }
+  .gradient-border * + * {
+    margin-top: 0.5rem;
+  }
+  .gradient-border.-using-border-image {
+    border-width: var(--border-width);
+    border-style: solid;
+    -o-border-image: linear-gradient(135deg, var(--color-1), var(--color-2)) 1 stretch;
+       border-image: linear-gradient(135deg, var(--color-1), var(--color-2)) 1 stretch;
+  }
