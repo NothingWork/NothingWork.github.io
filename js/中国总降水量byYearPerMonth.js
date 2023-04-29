@@ -61,7 +61,13 @@ function setRainfallMap() {
                         {
                             type: 'category',
                             // prettier-ignore
-                            data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+                            data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                            axisLine: { 
+                                onZero: false,
+                                lineStyle:{
+                                    color:'#1b645d',
+                                }
+                            },
                         }
                     ],
                     yAxis: [
@@ -77,7 +83,13 @@ function setRainfallMap() {
                                     }
                                     return data;
                                 }
-                            }
+                            },
+                            axisLine: { 
+                                onZero: false,
+                                lineStyle:{
+                                    color:'#1b645d',
+                                }
+                            },
                         }
                     ],
                     series: [

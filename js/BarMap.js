@@ -33,6 +33,7 @@ $.ajax({
             grid: {
                 left: '10%',
                 right: '10%', // 将 Label 放在左侧
+                bottom:'3%',
                 containLabel: true
               },
             // toolbox: {

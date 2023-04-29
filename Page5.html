@@ -51,7 +51,7 @@
 								</div>
 								<div class="control" style="font-weight: normal;">
 									<a href="Page4.html">全球合作措施</a>
-									<a href="Page5.html">温室气体减排</a>
+									<a href="Page5.html" id="controlbutton">温室气体减排</a>
 									<a href="Page6.html">生态保护</a>
 								</div>
 								<div style="padding-top: 6px;">
@@ -77,7 +77,7 @@
 								<div class="title" style="display: flex;">
 									<h4>能源发电量占比</h4>
 									<!-- <button id="big" style="margin: 2px;margin-left: 15px;"  href="test1.html">  + </button> -->
-									<button onclick="window.location.href='能源发电量占比趋势图.html'" type="button" id="add">+</button>
+									<button onclick="window.location.href='能源发电量占比趋势图.html'" type="button" id="add" style="margin-left: 6px;">+</button>
 								</div>
 								<div id="bubbleEnergy" style="height: 150px;width: 130px;">
 
@@ -247,6 +247,24 @@
 	#countryInfo:hover {
 		background-color: #c45a65;
 		color: #fff;
+	}
+
+	#add {
+	padding: 0px 5px 0px 5px;
+	border-radius: 5px;
+	border: 2px solid #6cb75e;
+	background: #ffffff;
+	color: #6cb75e;
+	font-weight: bold;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	}
+
+	#add:hover {
+		background: #6cb75e;
+		color: #ffffff;
+		transform: scale(1.1);
 	}
 
 </style>

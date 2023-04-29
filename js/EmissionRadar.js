@@ -273,25 +273,30 @@ function Radar(){
 
         // console.log(mainCountryEmission_CH4)
         var EmissionRadar = {
-            title: {
-                text: '',
-                textStyle: {
-                color: 'rgba(221,221,221,1)',
-                fontSize: 14,
-                lineHeight: 10,
-                },
-                left: 'center',
-                top: 'bottom',
+            // title: {
+            //     text: '',
+            //     textStyle: {
+            //     color: 'rgba(221,221,221,1)',
+            //     fontSize: 14,
+            //     lineHeight: 10,
+            //     },
+            //     left: 'center',
+            //     top: 'bottom',
 
-            },
-            width: 300,  // 画布宽度为 800 像素
-            height: 300, 
-
+            // },
+            // width: 300,  // 画布宽度为 800 像素
+            // height: 300, 
+            // width: 300,
+            // height: 300,
+            // left: '30px', // 向右移动 50 像素
+            // top: '10px',
             color: ['#7BFF00', '#FFE434', '#56A3F1', '#FF917C','#8EFF74','#FB00FF'],
                 // 图表位置
-            grid: {
-                position: 'center',
-            },
+            // grid: {
+            //     // position: 'center',
+            //     left:'35px',
+            //     right:'35%',
+            // },
             tooltip : {
                     confine: true,
                     enterable: true, 
@@ -336,7 +341,7 @@ function Radar(){
                     show : true,
                     areaStyle : {
                         // color: 'rgba(255,0,0,0)', // 图表背景的颜色
-                        color: ['#77EADF', '#26C3BE', '#64AFE9', '#428BD4'],
+                        color: ['#9eccab', '#485b4d', '#579572', '#83a78d'],
                         shadowColor: 'rgba(0, 0, 0, 0.2)',
                         shadowBlur: 10
                     },

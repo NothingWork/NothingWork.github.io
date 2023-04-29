@@ -12,8 +12,9 @@
 </head>
 <body>
   <head>
-    <div class="head1">
-      <a  href="Page5.html" style="font-size:25px;padding-left: 400px;">能源发电量占比趋势图</a>
+    <div class="head1" style="display:flex;">
+      <a  href="Page5.html" style="font-size:25px;padding-left: 450px;">能源发电量占比趋势图</a>
+      <a  href="Page5.html" style="font-size:12px;float:right;color: aliceblue;position:absolute;right:0;padding-right: 20px;">[返回]</a>
 
     </div>
 
@@ -99,7 +100,8 @@
         trigger: 'axis',
         axisPointer: {
           type: 'shadow'
-        }
+        },
+        
       },
       grid: {
         top: '20%',
@@ -116,13 +118,14 @@
       yAxis: {
         type: 'value',
         name: '%',
-
+        
       },
       dataZoom: [{
         type: 'slider', //缩放滑动条 inside无
         show: true, //开启
-        yAxisIndex: [0], //Y轴滑动
-        
+        yAxisIndex: 0, //Y轴滑动
+        left: 'auto',
+        // right   :10,
       }],
       series: data.map(function(item) {
         return {

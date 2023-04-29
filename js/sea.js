@@ -48,10 +48,22 @@ $.ajax({
         },
         xAxis: {
             type: 'category',
-            data: year3
+            data: year3,
+            axisLine: { 
+                onZero: false,
+                lineStyle:{
+                    color:'#1b645d',
+                }
+            },
         },
         yAxis: {
-            type: 'value'
+            type: 'value',
+            axisLine: { 
+                onZero: false,
+                lineStyle:{
+                    color:'#1b645d',
+                }
+            },
         },
         dataZoom: [{
             type: 'inside', //缩放滑动条 inside无

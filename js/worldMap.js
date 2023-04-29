@@ -252,11 +252,11 @@ function setWorldMap() {
                 },
                 visualMap: {
                     min: 0,
-                    max: 10,
+                    max: 200,
                     text: ['高', '低'],
                     realtime: false,
                     calculable: true,
-                    color: ['red', 'orange', 'white']
+                    color: ['#c45a65', '#eaad1a', 'white']
                 },
                 series: [
                     {

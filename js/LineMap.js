@@ -19,9 +19,10 @@ $.ajax({
                 formatter: 'Emission : <br/>{b}年 : {c}Mt'
             },
             grid: {
-                left: '1%',
+                left: '7%',
                 right: '6%',
                 bottom: '3%',
+                top:'5%',
                 containLabel: true
             },
             xAxis: {
@@ -35,11 +36,22 @@ $.ajax({
                         }
                         return value;
                     }
-                }
+                },
+                axisLine: { 
+                    onZero: false,
+                    lineStyle:{
+                        color:'#1b645d',
+                    }
+                },
             },
             yAxis: {
                 type: 'category',
-                axisLine: { onZero: false },
+                axisLine: { 
+                    onZero: false,
+                    lineStyle:{
+                        color:'#1b645d',
+                    }
+                },
                 axisLabel: {
                     formatter: '{value}年'
                 },
@@ -59,7 +71,8 @@ $.ajax({
                         shadowBlur: 10,
                         shadowOffsetY: 8
                     },
-                    data: data
+                    data: data,
+                    color:'#253d24',
                 }
             ]
         };

@@ -144,6 +144,18 @@ h4{
 	  
 }
 
+#controlbutton{
+	/* background-color: #575c5a;
+	color:#b0bcb3;
+	box-shadow:0px 3px 5px 3px  #787d78; */
+	/* padding: 10px 20px; */
+	/* border-radius: 20px; */
+	/* background-image: linear-gradient(to bottom, #8bc34a, #5d8e2a);
+	box-shadow: 0 2px 3px #3f7518;
+	color: #ffffff; */
+	background-image: linear-gradient(to top, #8bc34a, #5d8e2a);
+  	border-color: #6c9d18;
+}
 
 /*************四角边框样式**********/
 .win {
