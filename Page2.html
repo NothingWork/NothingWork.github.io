@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>气候变化与全球应对数据可视化</title>
+	<!-- <script type="text/javascript" src="js/jquery.js"></script> -->
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery-csv-1.0.21.js"></script>
+	<script type="text/javascript" src="js/jquery.csv.js"></script>
+	<!-- <script type="text/javascript" src="js/echarts.js"></script> -->
+	<script type="text/javascript" src="js/echarts.min.js"></script>
+	<script type="text/javascript" src="js/world.js"></script>
+	<script type="text/javascript" src="js/china.js"></script>
+	<script type="text/javascript" src="js/echart3.js"></script>
+	<script type="text/javascript" src="js/echarts-wordcloud.js"></script>
+	<!-- <script type="text/javascript" src="js/require.js"></script> -->
+
+
+	<!-- <script type="text/javascript" src="js/worldMap.js"></script> -->
+	<!-- <script src="js/jquery.min.map"></script> -->
+	<link rel="stylesheet" href="css/all.css">
+</head>
+
+<body>
+
+
+	<div class="head" style="height: 82.5px;">
+		<h1>气候变化与全球应对</h1>
+	</div>
+	<div class="box">
+		<ul class="ul-1">
+			<li class="li-1" style="width: 15%;height: 100%;">
+				<div class="box-in">
+					<!-- 框 -->
+					<div class="win">
+						<!-- 四个角的边框效果 -->
+						<div class="border_corner border_corner_left_top"></div>
+						<div class="border_corner border_corner_right_top"></div>
+						<div class="border_corner border_corner_left_bottom"></div>
+						<div class="border_corner border_corner_right_bottom"></div>
+						<div class="main" style="height: 400px;"><!--在这里更改图表高度 上下加起来640px-->
+							<!-- 这里写内容 -->
+							<div class="title">
+								<h4>控制台</h4>
+							</div>
+							<div style="padding-top: 6px;">
+								<h4>·气候变化</h4>
+							</div>
+							<div class="control" style="font-weight: normal;">
+								<a href="index.html">各国污染排放变化</a>
+								<a href="Page2.html">气候变化具体表现</a>
+								<a href="Page3.html">气候变化危害</a>
+
+							</div>
+							<div style="padding-top: 6px;">
+								<h4>·全球应对</h4>
+							</div>
+							<div class="control" style="font-weight: normal;">
+								<a href="Page4.html">全球合作措施</a>
+								<a href="Page5.html">温室气体减排</a>
+								<a href="Page6.html">生态保护</a>
+							</div>
+							<div style="padding-top: 6px;">
+								<div class="control" style="font-weight: normal;">
+									<a class="h4" href="Page7.html">我国应对</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="box-in">
+
+					<p class="imgstyle" >
+						<img width="100%" src="img/气候变化.png">
+					</p>
+				</div>
+			</li>
+
+
+
+
+			<li class="li-1" style="width: 60%;height: 100%;">
+				<div class="box-in">
+					<!-- 框 -->
+					<div class="win">
+						<!-- 四个角的边框效果 -->
+						<div class="border_corner border_corner_left_top"></div>
+						<div class="border_corner border_corner_right_top"></div>
+						<div class="border_corner border_corner_left_bottom"></div>
+						<div class="border_corner border_corner_right_bottom"></div>
+						<div class="main" style="height: 400px;"><!--在这里更改图表高度 上下加起来640px-->
+							<!-- 这里写内容 -->
+							<div id="worldMapInPage2" class="title">
+								<h4>2020年世界平均气温</h4>
+							</div>
+							<div id="worldMapOfTemp" style="height: 355px;"></div>
+							<script type="text/javascript" src="js/worldMapOfTemp.js"></script>
+						</div>
+					</div>
+				</div>
+				<div class="box-in" style="padding:3px;">
+					<!-- 框 -->
+					<div class="win">
+						<!-- 四个角的边框效果 -->
+						<div class="border_corner border_corner_left_top"></div>
+						<div class="border_corner border_corner_right_top"></div>
+						<div class="border_corner border_corner_left_bottom"></div>
+						<div class="border_corner border_corner_right_bottom"></div>
+						<div class="main" style="height: 240px;"><!--在这里更改图表高度-->
+							<!-- 这里写内容 -->
+							<div class="title">
+								<h4>中国各省月度降水量</h4>
+							</div>
+							<div id="ParallelMap" style="height: 200px;"></div>
+
+						</div>
+					</div>
+				</div>
+			</li>
+
+
+			<li class="li-1" style="width: 25%;height: 100%;">
+				<div class="box-in" style="height:416px">
+					<!-- 框 -->
+					<div class="win">
+						<!-- 四个角的边框效果 -->
+						<div class="border_corner border_corner_left_top"></div>
+						<div class="border_corner border_corner_right_top"></div>
+						<div class="border_corner border_corner_left_bottom"></div>
+						<div class="border_corner border_corner_right_bottom"></div>
+						<div class="main" style="height: 400px;"><!--在这里更改图表高度 上下加起来640px-->
+							<!-- 这里写内容 -->
+							<div id="chinaMonthlyRainfall" class="title" style="display: flex; ">
+								<h4 style="color:#7a7978"> 中国月度总降水量</h4>
+								<input type="range" id="yearSliderInPage2" min="2000" max="2019" step="1"
+									style="width:23%;left:32%;" oninput="setRainfallMap(),setParallelMap()">
+
+							</div>
+							<div id="RainfallMap" style="height: 340px;"></div>
+
+						</div>
+					</div>
+				</div>
+				<div class="box-in">
+					<!-- 框 -->
+					<div class="win">
+						<!-- 四个角的边框效果 -->
+						<div class="border_corner border_corner_left_top"></div>
+						<div class="border_corner border_corner_right_top"></div>
+						<div class="border_corner border_corner_left_bottom"></div>
+						<div class="border_corner border_corner_right_bottom"></div>
+						<div class="main" style="height: 240px;"><!--在这里更改图表高度-->
+							<!-- 这里写内容 -->
+							<div class="title" style="display: flex;">
+								<h4>灾害词云</h4>
+								<h5 style="font-size: 5px;color: #b0b0b0;padding-left: 70px;">数据来源于OWID组织</h5>
+							</div>
+							<div id="WordcloudMap" style="height: 200px;"></div>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+
+	</div>
+
+
+</body>
+
+<script type="text/javascript" src="js/中国总降水量byYearPerMonth.js"></script>
+<script type="text/javascript" src="js/ParallelMap.js"></script>
+<script type="text/javascript" src="js/WordcloudMap.js"></script>
+
+</html>

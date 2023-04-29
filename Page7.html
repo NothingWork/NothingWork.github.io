@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>气候变化与经济发展数据可视化</title>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/echarts.min.js"></script>
+		<script src="./js/jquery-csv-1.0.21.js"></script>
+		<link rel="stylesheet" href="css/all.css">	</head>
+	<body>
+
+		
+		<div class="head" style="height: 82.5px;">
+			<h1>气候变化与经济发展</h1>
+		</div>
+		<div class="box" >
+			<ul class="ul-1">
+				<li class="li-1" style="width: 15%;height: 100%;">
+					<div class="box-in" >
+						<!-- 框 -->
+						<div class="win" >
+						    <!-- 四个角的边框效果 -->
+						    <div class="border_corner border_corner_left_top"></div>
+						    <div class="border_corner border_corner_right_top"></div>
+						    <div class="border_corner border_corner_left_bottom"></div>
+						    <div class="border_corner border_corner_right_bottom"></div>
+						    <div class="main" style="height: 400px;"><!--在这里更改图表高度 上下加起来640px-->
+						       <!-- 这里写内容 -->
+								<div class="title">
+									<h4>控制台</h4>
+								</div>
+								<div style="padding-top: 6px;">
+									<h4>·气候变化</h4>
+								</div>
+								<div class="control" style="font-weight: normal;">
+									<a href="index.html">各国污染排放变化</a>
+									<a href="Page2.html">气候变化具体表现</a>
+									<a href="Page3.html">气候变化危害</a>
+	
+								</div>
+								<div style="padding-top: 6px;">
+									<h4>·全球应对</h4>
+								</div>
+								<div class="control" style="font-weight: normal;">
+									<a href="Page4.html">全球合作措施</a>
+									<a href="Page5.html">温室气体减排</a>
+									<a href="Page6.html">生态保护</a>
+								</div>
+								<div style="padding-top: 6px;">
+									<div class="control" style="font-weight: normal;">
+										<a class="h4" href="Page7.html">我国应对</a>
+									</div>
+								</div>
+								
+						    </div>
+						</div>
+					</div>
+					
+					
+				</li>
+				
+				
+				
+				
+				<li class="li-1" style="width: 75%;height: 100%;">
+					<div class="slideshow">
+						<!-- <img style="padding: 20px" src="../img/我国应对1.png" alt="Image 1"> -->
+						<!-- <img style="padding: 20px" src="../img/我国应对2.png" alt="Image 2"> -->
+						<img style="padding: 20px" src="img/我国应对1.png" alt="Image 1">
+						<img style="padding: 20px" src="img/我国应对2.png" alt="Image 2">
+						<img style="padding: 20px" src="../img/我国应对4.png" alt="Image 3">
+						<button class="prev">&#8249;</button>
+  						<button class="next">&#8250;</button>
+					</div>
+					<script type="text/javascript" src="../js/slideshow.js"></script>
+					<!-- <script type="text/javascript">
+						window.onload = function() {
+							initSlides();
+						}
+					</script> -->
+				</li>
+			</ul>
+			
+		</div>
+		
+		
+	</body>
+</html>
+
+<style>
+	
+.slideshow {
+  position: relative;
+  width: 1050px;
+  height: 550px;
+  overflow: hidden;
+}
+
+.slideshow img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.slideshow img:first-child {
+  opacity: 1;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  padding: 16px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: none;
+  cursor: pointer;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+</style>

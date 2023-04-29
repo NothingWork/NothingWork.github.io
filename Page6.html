@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>气候变化与全球应对数据可视化</title>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/echarts.min.js"></script>
+		<script src="./js/jquery-csv-1.0.21.js"></script>
+		<link rel="stylesheet" href="css/all.css">	</head>
+	<body>
+
+		
+		<div class="head" style="height: 82.5px;">
+			<h1>气候变化与全球应对</h1>
+		</div>
+		<div class="box" >
+			<ul class="ul-1">
+				<li class="li-1" style="width: 15%;height: 100%;">
+					<div class="box-in" >
+						<!-- 框 -->
+						<div class="win" >
+						    <!-- 四个角的边框效果 -->
+						    <div class="border_corner border_corner_left_top"></div>
+						    <div class="border_corner border_corner_right_top"></div>
+						    <div class="border_corner border_corner_left_bottom"></div>
+						    <div class="border_corner border_corner_right_bottom"></div>
+						    <div class="main" style="height: 400px;"><!--在这里更改图表高度 上下加起来640px-->
+						        <!-- 这里写内容 -->
+								<div class="title">
+									<h4>控制台</h4>
+								</div>
+								<div style="padding-top: 6px;">
+									<h4>·气候变化</h4>
+								</div>
+								<div class="control" style="font-weight: normal;">
+									<a href="index.html">各国污染排放变化</a>
+									<a href="Page2.html">气候变化具体表现</a>
+									<a href="Page3.html">气候变化危害</a>
+	
+								</div>
+								<div style="padding-top: 6px;">
+									<h4>·全球应对</h4>
+								</div>
+								<div class="control" style="font-weight: normal;">
+									<a href="Page4.html">全球合作措施</a>
+									<a href="Page5.html">温室气体减排</a>
+									<a href="Page6.html">生态保护</a>
+								</div>
+								<div style="padding-top: 6px;">
+									<div class="control" style="font-weight: normal;">
+										<a class="h4" href="Page7.html">我国应对</a>
+									</div>
+								</div>
+						    </div>
+						</div>
+					</div>
+					
+					<div class="box-in">
+						<!-- 框 -->
+						<div class="win">
+						    <!-- 四个角的边框效果 -->
+						    <div class="border_corner border_corner_left_top"></div>
+						    <div class="border_corner border_corner_right_top"></div>
+						    <div class="border_corner border_corner_left_bottom"></div>
+						    <div class="border_corner border_corner_right_bottom"></div>
+						    <div class="main" style="height: 240px;"><!--在这里更改图表高度 上下加起来640px-->
+						        <!-- 这里写内容 -->
+								<div class="title">
+									<h4>国际合作<br/>保护生物多样性</h4>
+								</div>
+								<div class="nationalhref">
+									<p class="hh hh1">
+										<a href="http://www.xinhuanet.com/world/cop15/">中国南京主办联合国生物多样性大会</a>
+									</p>
+									<p class="hh hh2">
+										<a href="https://www.163.com/dy/article/FHNSU7B905346JLK.html">欧盟提出抗击生物多样性丧失的计划</a>
+									</p>
+									<p class="hh hh3">
+										<a href="http://www.moa.gov.cn/xw/bmdt/202205/t20220512_6398984.htm">联合国呼吁保护全球植物</a>
+									</p>
+									<p class="hh hh4">
+										<a href="http://society.sohu.com/a/607065475_175033">英国发起建立海运生态系统倡议</a>
+									</p>
+								</div>
+								
+						    </div>
+						</div>
+					</div>
+				</li>
+				
+				
+				
+				
+				<li class="li-1" style="width: 60%;height: 100%;">
+					<div class="box-in" >
+						<!-- 框 -->
+						<div class="win">
+						    <!-- 四个角的边框效果 -->
+						    <div class="border_corner border_corner_left_top"></div>
+						    <div class="border_corner border_corner_right_top"></div>
+						    <div class="border_corner border_corner_left_bottom"></div>
+						    <div class="border_corner border_corner_right_bottom"></div>
+						    <div class="main" style="height: 400px;"><!--在这里更改图表高度 上下加起来640px-->
+						        <!-- 这里写内容 -->
+								<div class="title">
+									<h4>森林覆盖率%</h4>
+								</div>
+								<div id="forestLine" style="width:750px;height: 350px;">
+								
+								</div>
+								<script type="text/javascript" src="js/forest.js"></script>
+
+						    </div>
+						</div>
+					</div>
+					<div class="box-in" >
+						<!-- 框 -->
+						<div class="win">
+						    <!-- 四个角的边框效果 -->
+						    <div class="border_corner border_corner_left_top"></div>
+						    <div class="border_corner border_corner_right_top"></div>
+						    <div class="border_corner border_corner_left_bottom"></div>
+						    <div class="border_corner border_corner_right_bottom"></div>
+						    <div class="main" style="height: 240px;"><!--在这里更改图表高度-->
+						        <!-- 这里写内容 -->
+								<div class="title">
+									<h4>陆地及海洋保护区面积占总领土面积比例%</h4>
+								</div>
+								<div id="seaChart" style="width:750px;height: 250px;">
+								</div>
+								<script type="text/javascript" src="js/sea.js"></script>
+
+						    </div>
+						</div>
+					</div>
+				</li>
+				
+				
+				<li class="li-1" style="width: 25%;height: 100%;">
+					<div class="box-in" >
+						<!-- 框 -->
+						<div class="win">
+						    <!-- 四个角的边框效果 -->
+						    
+						    <div class="main" style="height: 400px;"><!--在这里更改图表高度 上下加起来640px-->
+						        <!-- 这里写内容 -->
+								<div class="title" style="display: flex;">
+									<h4>保护海洋环境措施</h4>
+									<label for="pic-select"></label>
+									<select id="pic-select">
+										<option value="../img/海洋保护美国.png">美国</option>
+										<option value="../img/海洋保护英国.png">英国</option>
+										<option value="../img/海洋保护中国.png">中国</option>
+										<option value="../img/海洋保护美国.png">印度</option>
+										<option value="../img/海洋保护美国.png">俄罗斯</option>
+										<option value="../img/海洋保护美国.png">日本</option>
+									</select>
+								</div>
+								<img id="pic" src="../img/海洋保护美国.png" alt="图片">
+								<!-- <div id="countryInfo" style="padding:14px;color:#ec9bad;">
+								</div> -->
+
+						    </div>
+						</div>
+					</div>
+					<div class="box-in" >
+						<!-- 框 -->
+						<div class="win">
+						    <!-- 四个角的边框效果 -->
+						    <div class="border_corner border_corner_left_top"></div>
+						    <div class="border_corner border_corner_right_top"></div>
+						    <div class="border_corner border_corner_left_bottom"></div>
+						    <div class="border_corner border_corner_right_bottom"></div>
+						    <div class="main" style="height: 180px;"><!--在这里更改图表高度-->
+						        <!-- 这里写内容 -->
+								<div class="title">
+									<h4>联合国生物多样性大会</h4>
+								</div>
+								<!-- <div class="background4" style="height: 195px;"></div> -->
+								<a href="http://www.xinhuanet.com/world/cop15/">
+									<img src="../img/union.jpg" alt="Image description"  style="height: 135px;width: 300px;">
+								  </a>
+						    </div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+		</div>
+		
+		
+	</body>
+</html>
+<style>
+	select {
+		color: #2bae85; /*设置字体颜色为白色*/
+		background-color: #eef7f2; /*设置背景颜色为绿色*/
+		border-color: #30a99d; /*设置边框颜色为绿色*/
+		/* border: 1px; */
+	}
+	.hh a {
+  		color: #2486b9;
+ 	 	text-decoration:dashed;
+		font-size: 13px;
+	}
+	.hh{
+		border:2px solid #d0dfe6;
+
+	}
+	.hh1 a:hover{
+		color: #dc143c;
+  		border-bottom-color: #dc143c;
+		font-weight: bold;
+	}
+	.hh2 a:hover{
+		color: #dc143c;
+  		border-bottom-color: #dc143c;
+		font-weight: bold;
+	}
+	.hh3 a:hover{
+		color: #dc143c;
+  		border-bottom-color: #dc143c;
+		font-weight: bold;
+	}
+	.hh4 a:hover{
+		color: #dc143c;
+  		border-bottom-color: #dc143c;
+		font-weight: bold;
+	}
+</style>
+<script>
+	var select = document.getElementById('pic-select');
+	var pic = document.getElementById('pic');
+
+	select.addEventListener('change', function() {
+	pic.src = select.value; // 切换图片
+	});
+</script>
+<script>
+	// 获取选择框和信息框的元素
+const countrySelect = document.getElementById("countrySelect");
+const countryInfo = document.getElementById("countryInfo");
+
+// 定义一个对象，存储不同国家对应的信息
+const countryData = {
+	US:{
+		txt:"截至2020年，美国领土内设有20个海洋保护区，总面积超过170万平方公里。根据2020年的数据，美国在海洋科学、技术和管理方面的预算为25亿美元左右。"
+	},
+	UK:{
+		txt:"截至2020年，英国设有355个海洋保护区，总面积约40万平方公里。英国在海洋保护和海事方面的预算为16亿英镑左右。"
+	},
+	China: {
+		txt:"中国是世界上拥有近14,500公里海岸线的国家之一，也是世界上最大的渔业大国之一。根据2020年的数据，中国计划在未来五年内投资500亿元人民币用于海洋生态保护和恢复。"
+	},
+	India: {
+		txt:"印度有7500公里的海岸线和多个群岛,根据2018年的数据，印度在海洋科学和技术方面的预算为17亿美元左右。"
+	},
+	Ru:{
+		txt:"俄罗斯是拥有世界上最长海岸线的国家之一，也是世界上最大的国家之一。根据2020年的数据，俄罗斯在海洋科学和技术方面的预算为约70亿卢布。"
+	},
+	Japan:{
+		txt:"日本是一个海洋岛国，拥有长达3.8万公里的海岸线。根据2018年的数据，日本在海洋科学和技术方面的预算为82亿美元左右。"
+	}
+};
+
+	// 创建一个函数，用于根据选择的国家更新信息
+	function updateCountryInfo() {
+	// 获取选择框当前选中的值
+	const selectedCountry = countrySelect.value;
+
+	// 根据选中的国家获取相应的信息
+	const country = countryData[selectedCountry];
+
+	// 更新信息框的内容
+	countryInfo.innerHTML = `
+		<h2>${country.txt}</h2>`;
+	}
+
+	// 添加一个事件监听器，用于在选择框选中的值发生改变时更新下方的信息
+	countrySelect.addEventListener("change", updateCountryInfo);
+
+	// 初始化页面时，显示默认选中的国家的信息
+	updateCountryInfo();
+</script>
