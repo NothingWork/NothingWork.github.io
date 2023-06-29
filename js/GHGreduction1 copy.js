@@ -164,7 +164,7 @@ $.ajax({
       }
       return data;
     }
-    
+    // var nn =  ['可再生能源', '石油、天然气和煤炭能源', '其他能源']
     const scatterData = getVirtualData();
     const pieSeries = scatterData.map(function (item, index) {
       return {
@@ -177,7 +177,13 @@ $.ajax({
           formatter: '{c}',
           position: 'inside'
         },
-        data: dataArr[index+1]
+        // name:nn,
+        // data: dataArr[index+1]
+        data: [
+          {name: '可再生能源', value:  dataArr[index+1][0]},
+          {name: '石油、天然气和煤炭能源', value:  dataArr[index+1][1]},
+          {name: '其他能源', value:  dataArr[index+1][2]}
+        ]
       };
     });
     option = {

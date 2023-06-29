@@ -1,4 +1,13 @@
-
+const yearSliderInPage3 = document.getElementById("yearSliderInPage2");
+const headerText2 = document.querySelector('#chinaMonthlyProvinceRainfall h4');
+yearSliderInPage3.addEventListener("input", function () {
+    yearValue = this.value;
+    col = yearValue - 2000
+    headerText2.innerHTML = yearSliderInPage3.value + '年 ' + '中国各省月度降水量';
+    // headerText.textContent = `${yearValue}年中国月度总降水量`; // update the heading with the selected year
+    setRainfallMap(col); // update the rainfall map with the selected year
+    setParallelMap(col); // update the parallel map with the selected year
+});
 // TODO: 根据选中的年份加载数据
 var province = ['安徽', '澳门', '北京', '福建', '甘肃', '广东', '广西', '贵州', '海南', '河北', '河南', '黑龙江', '湖北', '湖南', '吉林', '江苏', '江西', '辽宁', '内蒙古', '宁夏', '青海', '山东', '山西', '陕西', '上海', '四川', '台湾', '天津', '西藏', '香港', '新疆', '云南', '浙江', '重庆']
 var datatemp = []
@@ -61,6 +70,7 @@ function setParallelMap() {
                 };
                 dataArr.push(parellelDataObj);
             }
+            // console.log(dataArr)
             var parallelMap = echarts.init(document.getElementById('ParallelMap'));
             var optionForParallelMap = {
                 legend: {
@@ -101,14 +111,7 @@ function setParallelMap() {
                         },
                         axisLine: {
                             lineStyle: {
-                                color: 'black',
-                                tooltip: {
-                                    trigger: 'axis',
-                                    padding: 10,
-                                    backgroundColor: '#222',
-                                    borderColor: '#777',
-                                    borderWidth: 1
-                                }
+                                color: 'black'
                             }
                         },
                         axisTick: {
@@ -127,7 +130,7 @@ function setParallelMap() {
                 series: dataArr
             };
             parallelMap.setOption(optionForParallelMap);
-            datalist=[]
+            datalist = []
         }
     });
 }

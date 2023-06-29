@@ -4,9 +4,10 @@ var col = 5
 
 let yearValue = 0; // 初始化 yearValue 全局变量
 let gasValue = ''; // 初始化 gasValue 全局变量
-
+const headerTextOfworldMapInPage1 = document.querySelector('#titleOfWorldMap h4');
 const yearSlider = document.getElementById("yearSlider");
 yearSlider.addEventListener("input", function () {
+    headerTextOfworldMapInPage1.innerHTML = yearSlider.value + '年空气污染排放热力图';
     yearValue = this.value;
     col = 1952 - yearValue
     // console.log(yearValue)
@@ -21,17 +22,18 @@ gasSelect.addEventListener('change', function () {
 function setWorldMap() {
     var year = document.getElementById("yearSlider").value;
     var gas = document.getElementById("gas-type").value;
-    console.log(year);
+    // console.log(year);
     // TODO: 根据选中的年份加载数据
+    // console.log(gas)
     $.ajax({
-        url: './dataset/historical_emissions1850-1947 ' + gas + '.csv',
+        url: 'dataset/historical_emissions1850-1947 ' + gas + '.csv',
         type: 'GET',
         async: true,
         success: function (testData) {
             var m = $.csv.toArrays(testData, {
                 delimiter: ","
             })
-            console.log(m);
+            // console.log(m);
             for (let j = 0; j < m.length; j++) {
                 Country[j] = m[j][0];
                 Emission[j] = m[j][col];
@@ -241,14 +243,20 @@ function setWorldMap() {
             }
             var worldMap = echarts.init(document.getElementById('worldMap'));
 
-            var optionForWorldMap = {
+            var optionForAirPollutionMap = {
+                tooltip: {
+                    trigger: 'item',
+                    formatter: function (params) {
+                        return params.data.name + '<br>排放量: ' + params.data.value + 'Mt'; // update tooltip content
+                    }
+                },
                 visualMap: {
                     min: 0,
-                    max: 10,
+                    max: 200,
                     text: ['高', '低'],
                     realtime: false,
                     calculable: true,
-                    color: ['red', 'orange', 'white']
+                    color: ['#c45a65', '#eaad1a', 'white']
                 },
                 series: [
                     {
@@ -264,7 +272,7 @@ function setWorldMap() {
                     }
                 ]
             };
-            worldMap.setOption(optionForWorldMap);
+            worldMap.setOption(optionForAirPollutionMap);
         }
     });
 }

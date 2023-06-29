@@ -2,10 +2,8 @@ var dataAll = [];
 var dataCO2 = [];
 var dataNO = [];
 var dataCH4 = [];
-
 var sixCountry = ['America', 'U.K.', 'China', 'India', 'Russia', 'Japan'];
 var yearList = ['1990', '1991', '1992', '1993', '1994', '1995'];
-
 // Define a function to process the CSV data
 function processCSVData(csvData, gasType) {
     var dataArray = $.csv.toArrays(csvData, {
@@ -32,7 +30,6 @@ function processCSVData(csvData, gasType) {
         }
     }
 }
-
 // Read and process each CSV file using jQuery AJAX
 $.when(
     $.ajax({
@@ -76,13 +73,20 @@ $.when(
         }
     ];
     var sunburstMap = echarts.init(document.getElementById('SunburstMap'));
-
     optionForSunburstMap = {
         series: {
             type: 'sunburst',
             data: dataAll,
             radius: [0, '95%'],
             sort: undefined,
+            tooltip: {
+                triggerOn: 'mousemove|click',
+                formatter: function (params) {
+                    console.log(params)
+                    var value = params.data.value || 0;
+                    return params.data.name + ': ' + value;
+                }
+            },
             emphasis: {
                 focus: 'ancestor'
             },
@@ -125,19 +129,11 @@ $.when(
                     },
                     itemStyle: {
                         borderWidth: 3
-                    }
+                    },
                 }
             ]
-           
+
         }
     };
-
     sunburstMap.setOption(optionForSunburstMap);
 });
-
-
-
-
-//     var year = document.getElementById("yearSlider").value;
-//     var gas = document.getElementById("gas-type").value;
-//     // console.log(year);

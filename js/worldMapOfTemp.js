@@ -5,8 +5,10 @@ var Temp = []
 var province = []
 var tempForChina = []
 
-
+const headerTextOfworldMapInPage2 = document.querySelector('#worldMapInPage2 h4');
 function setWorldMapOfTemp() {
+    const headerTextOfworldMapInPage2 = document.querySelector('#worldMapInPage2 h4');
+    headerTextOfworldMapInPage2.innerHTML = '2020年世界平均气温';
     $.ajax({
         url: 'dataset/avg_world_temp_2020.csv',
         type: 'GET',
@@ -265,6 +267,9 @@ function setWorldMapOfTemp() {
                         color: '#fff',
                         fontSize: 14,
                         fontWeight: 'bold'
+                    },
+                    formatter: function (params) {
+                        return "平均气温<br/>" + params.name + ": " + params.value + " ℃"
                     }
                 },
 
@@ -280,6 +285,8 @@ function setWorldMapOfTemp() {
 
 }
 function enterChinaMap() {
+    const headerTextOfworldMapInPage2 = document.querySelector('#worldMapInPage2 h4');
+    headerTextOfworldMapInPage2.innerHTML = '2000年中国各省平均气温';
     $.ajax({
         url: './dataset/2000年各省平均气温.csv', // 获取data文件夹里2019年30个省份排放清单全部数据
         type: 'GET',
@@ -288,7 +295,6 @@ function enterChinaMap() {
             var m = $.csv.toArrays(testData, {
                 delimiter: ","
             })
-            console.log(m)
             for (let j = 0; j < m.length; j++) {
                 province[j] = m[j][0]
                 tempForChina[j] = m[j][1]
@@ -304,14 +310,11 @@ function enterChinaMap() {
             //中国地图部分
             var worldMapOfTemp = echarts.init(document.getElementById('worldMapOfTemp'));
             var optionForChina = {
-                title: {
-                    x: 'center',
-                    textStyle: {
-                        color: '#ffffff'
-                    }
-                },
                 tooltip: {
-                    trigger: 'item'
+                    trigger: 'item',
+                    formatter: function (params) {
+                        return params.data.name + '<br>平均气温: ' + params.data.value + ' ℃'; // update tooltip content
+                    }
                 },
                 visualMap: {
                     min: 0,
@@ -319,32 +322,38 @@ function enterChinaMap() {
                     text: ['高', '低'],
                     realtime: false,
                     calculable: false,
-                    color: ['red', 'orange', 'white']
+                    precision: 0, // set precision of visualMap labels
+                    color: ['#d73f4b', '#f38181', '#f8b195', '#f0e0a4', '#cfe9b6', '#9ed2b6'] // update colors of visualMap
                 },
                 series: [{
-                    name: '碳排放量',
+                    name: '平均气温',
                     type: 'map',
                     mapType: 'china',
                     roam: false,
                     label: {
-                        normal: {
-                            show: true,
-                            color: '#000000'
-                        },
+                        show: false,
+                        color: '#333',
                         emphasis: {
                             show: true,
-                            color: '#38B0DE '
+                            textStyle: {
+                                color: '#1b645d',
+                                fontWeight: 'bold'
+                            }
                         }
                     },
                     itemStyle: {
+                        normal: {
+                            borderColor: '#d4d4d4',
+                            borderWidth: 0.5
+                        },
                         emphasis: {
-                            borderWidth: .5,
-                            borderColor: '#4b0082',
-                            areaColor: "#ece39e",
+                            areaColor: '#f0f0f0',
+                            borderWidth: 0.5,
+                            borderColor: '#444'
                         }
                     },
                     data: dataArr
-                }],
+                }]
             };
             worldMapOfTemp.setOption(optionForChina);
             worldMapOfTemp.getZr().on('click', function (event) {

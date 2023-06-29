@@ -7,13 +7,16 @@ yearSlider.addEventListener("input", function () {
     col = 1952 - yearValue
     // console.log(yearValue)
 });
-
+const headerTextOfnightingaleMapInPage1 = document.querySelector('#titleOfNightingaleMap h4');
 gasSelect.addEventListener('change', function () {
     gasValue = this.value;
+    headerTextOfnightingaleMapInPage1.innerHTML = gasSelect.value + '空气污染占比';
     // console.log(gasValue)
 });
 
 function setNightingaleMap() {
+
+
     var year = document.getElementById("yearSlider").value;
     var gas = document.getElementById("gas-type").value;
     if (year !== "") {
@@ -100,7 +103,7 @@ function setNightingaleMap() {
     }
 
 }
-
+setNightingaleMap();
 
 
 

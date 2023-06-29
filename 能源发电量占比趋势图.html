@@ -12,13 +12,14 @@
 </head>
 <body>
   <head>
-    <div class="head1">
-      <a  href="Page5.html" style="font-size:25px;padding-left: 400px;">能源发电量占比趋势图</a>
+    <div class="head1" style="display:flex;">
+      <a  href="Page5.html" style="font-size:25px;padding-left: 450px;">能源发电量占比趋势图</a>
+      <a  href="Page5.html" style="font-size:12px;float:right;color: aliceblue;position:absolute;right:0;padding-right: 20px;">[返回]</a>
 
     </div>
 
   </head>
-    <div id="bubbleEnergy" style="height: 600px;width: 1000px;padding-left: 40px;">
+    <div id="bubbleEnergy" style="height: 600px;width: 1250px;padding-left: 20px;">
 
     </div>
     <script>
@@ -52,25 +53,6 @@
       },
       {
         name: '美国',
-        data: data_usa
-      },
-      {
-        name: '英国',
-        data: data_uk
-      },
-      {
-        name: '中国',
-        data: data_china
-      }
-    ];
-    // 图表数据
-    var data2 = [
-      {
-        name: '世界',
-        data: data_world
-      },
-      {
-        name: '美国',
         data: usa_data
       },
       {
@@ -82,6 +64,25 @@
         data: china_data
       }
     ];
+    // 图表数据
+    var data2 = [
+      {
+        name: '世界',
+        data: data_world
+      },
+      {
+        name: '美国',
+        data: data_usa
+      },
+      {
+        name: '英国',
+        data: data_uk
+      },
+      {
+        name: '中国',
+        data: data_china
+      }
+    ];
 
     // 图表配置
     var option = {
@@ -91,7 +92,7 @@
       },
       legend: {
         // data: ['石油、天然气和煤炭能源占比', '可再生能源占比'],
-        data: ['世界', '美国', '英国', '中国'],
+        // data: ['世界', '美国', '英国', '中国'],
         top: 30,
         left: 10
       },
@@ -99,7 +100,8 @@
         trigger: 'axis',
         axisPointer: {
           type: 'shadow'
-        }
+        },
+        
       },
       grid: {
         top: '20%',
@@ -115,30 +117,29 @@
       },
       yAxis: {
         type: 'value',
-        name: '%'
+        name: '%',
+        
       },
+      dataZoom: [{
+        type: 'slider', //缩放滑动条 inside无
+        show: true, //开启
+        yAxisIndex: 0, //Y轴滑动
+        left: 'auto',
+        // right   :10,
+      }],
       series: data.map(function(item) {
         return {
-          name: item.name,
+          name: item.name+'石油、天然气和煤炭能源占比',
           type: 'line',
           data: item.data.map(function(value) {
             return value.toFixed(2);
           })
         };
       }),
-      // series: data.map(function(item) {
-      //   return {
-      //     name: item.name,
-      //     type: 'line',
-      //     data: item.data.map(function(value) {
-      //       return value.toFixed(2);
-      //     })
-      //   };
-      // })
     };
     option.series = option.series.concat(data2.map(function(item) {
       return {
-        name: item.name,
+        name: item.name+'可再生能源占比',
         type: 'line',
         data: item.data.map(function(value) {
           return value.toFixed(2);

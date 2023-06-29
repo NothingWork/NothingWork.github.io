@@ -32,28 +32,24 @@ function setRainfallMap() {
                 for (let j = 0; j < m.length; j++) {
                     data[j] = m[j][col];
                 }
-                // console.log(source);
-                // console.log(target);
-                // console.log(value);
-
-                // var dataArr = [];
-                // for (let i = 0; i < m.length; i++) {
-                //     const sankeyDataObj = {
-                //         source: source[i],
-                //         target: target[i],
-                //         value: value[i]
-                //     };
-                //     dataArr.push(sankeyDataObj);
-                // }
-
-
-
-
                 var rainfallMap = echarts.init(document.getElementById('RainfallMap'));
 
                 var optionForRainfallMap = {
                     tooltip: {
-                        trigger: 'axis'
+                        trigger: 'axis',
+                        formatter: function (params) {
+                            var value = params[0].value; // 假设只有一个数据项
+                            var unit = 'mm'; // 替换为您要使用的单位
+
+                            // 在数值后面添加单位
+                            var formattedValue = value + unit;
+
+                            // 假设还需要显示其他信息，可以添加需要的字段
+                            var otherInfo = params[0].name + ':';
+
+                            // 返回格式化后的提示框内容
+                            return otherInfo + '<br />' + formattedValue;
+                        }
                     },
                     legend: {
                         data: ['Rainfall'],
@@ -78,7 +74,13 @@ function setRainfallMap() {
                         {
                             type: 'category',
                             // prettier-ignore
-                            data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+                            data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                            axisLine: {
+                                onZero: false,
+                                lineStyle: {
+                                    color: '#1b645d',
+                                }
+                            },
                         }
                     ],
                     yAxis: [
@@ -94,7 +96,13 @@ function setRainfallMap() {
                                     }
                                     return data;
                                 }
-                            }
+                            },
+                            axisLine: {
+                                onZero: false,
+                                lineStyle: {
+                                    color: '#1b645d',
+                                }
+                            },
                         }
                     ],
                     series: [
@@ -107,8 +115,8 @@ function setRainfallMap() {
                             data: data,
                             markPoint: {
                                 data: [
-                                    { type: 'max', name: 'Max' },
-                                    { type: 'min', name: 'Min' }
+                                    { type: 'max', name: 'Max', itemStyle: { color: '#91cc75' } },
+                                    { type: 'min', name: 'Min', itemStyle: { color: '#91cc75' } }
                                 ]
                             },
                             markLine: {

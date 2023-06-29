@@ -13,7 +13,7 @@ function setWordcloudMap() {
             })
             for (let j = 0; j < m.length; j++) {
                 disaster[j] = m[j][0]
-                value[j] = m[j][1]
+                value[j] = m[j][2]
             }
             var dataArr = [];
             for (let i = 0; i < m.length; i++) {
@@ -39,12 +39,12 @@ function setWordcloudMap() {
                 series: [{
                     name: '热点分析',
                     type: 'wordCloud',
-                    size: ['50%', '99%'],
-                    sizeRange: [30, 60],
+                    size: ['50%', '70%'],
+                    sizeRange: [20, 50],
                     //textRotation: [0, 45, 90, -45],
                     rotationRange: [0, 0],
                     //shape: 'circle',
-                    textPadding: 0,
+                    textPadding: 1,
                     autoSize: {
                         enable: true,
                         minSize: 0

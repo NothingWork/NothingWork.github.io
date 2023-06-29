@@ -62,10 +62,22 @@ $.ajax({
         },
         xAxis: {
             type: 'category',
-            data: year2
+            data: year2,
+            axisLine: { 
+                onZero: false,
+                lineStyle:{
+                    color:'#1b645d',
+                }
+            },
         },
         yAxis: {
-            type: 'value'
+            type: 'value',
+            axisLine: { 
+                onZero: false,
+                lineStyle:{
+                    color:'#1b645d',
+                }
+            },
         },
         legend: {
             data: ['美国', '英国', '中国', '印度', '俄罗斯','日本']

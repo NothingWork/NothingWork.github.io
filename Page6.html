@@ -44,7 +44,7 @@
 								<div class="control" style="font-weight: normal;">
 									<a href="Page4.html">全球合作措施</a>
 									<a href="Page5.html">温室气体减排</a>
-									<a href="Page6.html">生态保护</a>
+									<a href="Page6.html" id="controlbutton">生态保护</a>
 								</div>
 								<div style="padding-top: 6px;">
 									<div class="control" style="font-weight: normal;">
@@ -66,19 +66,19 @@
 						    <div class="main" style="height: 240px;"><!--在这里更改图表高度 上下加起来640px-->
 						        <!-- 这里写内容 -->
 								<div class="title">
-									<h4>国际合作保护生物多样性</h4>
+									<h4>国际合作<br/>保护生物多样性</h4>
 								</div>
 								<div class="nationalhref">
-									<p class="hh">
+									<p class="hh hh1">
 										<a href="http://www.xinhuanet.com/world/cop15/">中国南京主办联合国生物多样性大会</a>
 									</p>
-									<p class="hh">
+									<p class="hh hh2">
 										<a href="https://www.163.com/dy/article/FHNSU7B905346JLK.html">欧盟提出抗击生物多样性丧失的计划</a>
 									</p>
-									<p class="hh">
+									<p class="hh hh3">
 										<a href="http://www.moa.gov.cn/xw/bmdt/202205/t20220512_6398984.htm">联合国呼吁保护全球植物</a>
 									</p>
-									<p class="hh">
+									<p class="hh hh4">
 										<a href="http://society.sohu.com/a/607065475_175033">英国发起建立海运生态系统倡议</a>
 									</p>
 								</div>
@@ -141,26 +141,25 @@
 						<!-- 框 -->
 						<div class="win">
 						    <!-- 四个角的边框效果 -->
-						    <div class="border_corner border_corner_left_top"></div>
-						    <div class="border_corner border_corner_right_top"></div>
-						    <div class="border_corner border_corner_left_bottom"></div>
-						    <div class="border_corner border_corner_right_bottom"></div>
+						    
 						    <div class="main" style="height: 400px;"><!--在这里更改图表高度 上下加起来640px-->
 						        <!-- 这里写内容 -->
 								<div class="title" style="display: flex;">
 									<h4>保护海洋环境措施</h4>
-									<select id="countrySelect" style="margin-left: 70px;">
-										<option value="US">美国</option>
-										<option value="UK">英国</option>
-										<option value="China">中国</option>
-										<option value="India">印度</option>
-										<option value="Ru">俄罗斯</option>
-										<option value="Japan">日本</option>
+									<label for="pic-select" style="margin-left: 40px;"></label>
+									<select id="pic-select">
+										<option value="../img/海洋保护美国2.png">美国</option>
+										<option value="../img/海洋保护英国2.png">英国</option>
+										<option value="../img/海洋保护中国2.png">中国</option>
+										<option value="../img/海洋保护印度2.png">印度</option>
+										<option value="../img/海洋保护俄罗斯2.png">俄罗斯</option>
+										<option value="../img/海洋保护日本2.png">日本</option>
 									</select>
 								</div>
+								<img id="pic" src="../img/海洋保护美国2.png" alt="图片">
+								<!-- <div id="countryInfo" style="padding:14px;color:#ec9bad;">
+								</div> -->
 
-								<div id="countryInfo" style="padding:14px;color:#ec9bad;">
-								</div>
 						    </div>
 						</div>
 					</div>
@@ -172,14 +171,14 @@
 						    <div class="border_corner border_corner_right_top"></div>
 						    <div class="border_corner border_corner_left_bottom"></div>
 						    <div class="border_corner border_corner_right_bottom"></div>
-						    <div class="main" style="height: 240px;"><!--在这里更改图表高度-->
+						    <div class="main" style="height: 180px;"><!--在这里更改图表高度-->
 						        <!-- 这里写内容 -->
 								<div class="title">
 									<h4>联合国生物多样性大会</h4>
 								</div>
 								<!-- <div class="background4" style="height: 195px;"></div> -->
 								<a href="http://www.xinhuanet.com/world/cop15/">
-									<img src="../img/union.jpg" alt="Image description"  style="height: 195px;width: 300px;">
+									<img src="../img/union.jpg" alt="Image description"  style="height: 135px;width: 150px;margin-left: 70px;">
 								  </a>
 						    </div>
 						</div>
@@ -208,8 +207,35 @@
 		border:2px solid #d0dfe6;
 
 	}
+	.hh1 a:hover{
+		color: #dc143c;
+  		border-bottom-color: #dc143c;
+		font-weight: bold;
+	}
+	.hh2 a:hover{
+		color: #dc143c;
+  		border-bottom-color: #dc143c;
+		font-weight: bold;
+	}
+	.hh3 a:hover{
+		color: #dc143c;
+  		border-bottom-color: #dc143c;
+		font-weight: bold;
+	}
+	.hh4 a:hover{
+		color: #dc143c;
+  		border-bottom-color: #dc143c;
+		font-weight: bold;
+	}
 </style>
+<script>
+	var select = document.getElementById('pic-select');
+	var pic = document.getElementById('pic');
 
+	select.addEventListener('change', function() {
+	pic.src = select.value; // 切换图片
+	});
+</script>
 <script>
 	// 获取选择框和信息框的元素
 const countrySelect = document.getElementById("countrySelect");
@@ -237,22 +263,22 @@ const countryData = {
 	}
 };
 
-// 创建一个函数，用于根据选择的国家更新信息
-function updateCountryInfo() {
-// 获取选择框当前选中的值
-const selectedCountry = countrySelect.value;
+	// 创建一个函数，用于根据选择的国家更新信息
+	function updateCountryInfo() {
+	// 获取选择框当前选中的值
+	const selectedCountry = countrySelect.value;
 
-// 根据选中的国家获取相应的信息
-const country = countryData[selectedCountry];
+	// 根据选中的国家获取相应的信息
+	const country = countryData[selectedCountry];
 
-// 更新信息框的内容
-countryInfo.innerHTML = `
-	<h2>${country.txt}</h2>`;
-}
+	// 更新信息框的内容
+	countryInfo.innerHTML = `
+		<h2>${country.txt}</h2>`;
+	}
 
-// 添加一个事件监听器，用于在选择框选中的值发生改变时更新下方的信息
-countrySelect.addEventListener("change", updateCountryInfo);
+	// 添加一个事件监听器，用于在选择框选中的值发生改变时更新下方的信息
+	countrySelect.addEventListener("change", updateCountryInfo);
 
-// 初始化页面时，显示默认选中的国家的信息
-updateCountryInfo();
+	// 初始化页面时，显示默认选中的国家的信息
+	updateCountryInfo();
 </script>

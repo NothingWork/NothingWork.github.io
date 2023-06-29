@@ -47,7 +47,7 @@ function setWorldMapOfDisaster() {
                 "Canada": "加拿大",
                 "Cape Verde": "佛得角",
                 "Cayman Islands": "开曼群岛",
-                "Central African Rep.": "中非",
+                "Central African Republic": "中非",
                 "Chad": "乍得",
                 "Chile": "智利",
                 "China": "中国",
@@ -60,7 +60,7 @@ function setWorldMapOfDisaster() {
                 "Cyprus": "塞浦路斯",
                 "Czech Rep.": "捷克共和国",
                 "Cote d'Ivoire": "科特迪瓦",
-                "Republic of the Congo": "刚果民主共和国",
+                "Democratic Republic of Congo": "刚果民主共和国",
                 "Dem. Rep. Korea": "朝鲜",
                 "Denmark": "丹麦",
                 "Djibouti": "吉布提",
@@ -158,7 +158,7 @@ function setWorldMapOfDisaster() {
                 "Russia": "俄罗斯",
                 "Rwanda": "卢旺达",
                 "S. Geo. and S. Sandw. Is.": "南乔治亚和南桑威奇群岛",
-                "S. Sudan": "南苏丹",
+                "South Sudan": "南苏丹",
                 "San Marino": "圣马力诺",
                 "Saudi Arabia": "沙特阿拉伯",
                 "Senegal": "塞内加尔",
@@ -219,12 +219,12 @@ function setWorldMapOfDisaster() {
 
             var optionForWorldMapOfDisaster = {
                 visualMap: {
-                    min: -3,
-                    max: 40,
+                    min: 0,
+                    max: 3000,
                     text: ['High', 'Low'],
                     realtime: false,
                     calculable: true,
-                    color: ['#1b645d', '#ececec']
+                    color: ['#ff6666', '#f7b500'] // 修改颜色
                 },
                 series: [
                     {
@@ -241,7 +241,7 @@ function setWorldMapOfDisaster() {
                         },
                         itemStyle: {
                             emphasis: {
-                                areaColor: '#4db6ac'
+                                areaColor: '#fbbd08' // 根据需求调整选中颜色
                             },
                             border: '1px solid #fff'
                         },
@@ -255,14 +255,16 @@ function setWorldMapOfDisaster() {
                 ],
                 tooltip: {
                     triggerOn: 'mousemove|click',
-                    backgroundColor: '#1b645d',
+                    backgroundColor: '#f7b500', // 修改提示框颜色
                     textStyle: {
                         color: '#fff',
                         fontSize: 14,
                         fontWeight: 'bold'
+                    },
+                    formatter: function (params) {
+                        return '风险指数: <br/>' + params.data.name + ': ' + params.data.value; // update tooltip content
                     }
                 },
-
             };
             worldMapOfDisaster.setOption(optionForWorldMapOfDisaster);
             // worldMapOfTemp.on('click', (params) => {

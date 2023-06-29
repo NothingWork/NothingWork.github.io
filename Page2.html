@@ -51,7 +51,7 @@
 							</div>
 							<div class="control" style="font-weight: normal;">
 								<a href="index.html">各国污染排放变化</a>
-								<a href="Page2.html">气候变化具体表现</a>
+								<a href="Page2.html" id="controlbutton">气候变化具体表现</a>
 								<a href="Page3.html">气候变化危害</a>
 
 							</div>
@@ -74,7 +74,7 @@
 
 				<div class="box-in">
 
-					<p class="imgstyle" >
+					<p class="imgstyle">
 						<img width="100%" src="img/气候变化.png">
 					</p>
 				</div>
@@ -94,7 +94,7 @@
 						<div class="border_corner border_corner_right_bottom"></div>
 						<div class="main" style="height: 400px;"><!--在这里更改图表高度 上下加起来640px-->
 							<!-- 这里写内容 -->
-							<div class="title">
+							<div id="worldMapInPage2" class="title">
 								<h4>2020年世界平均气温</h4>
 							</div>
 							<div id="worldMapOfTemp" style="height: 355px;"></div>
@@ -112,7 +112,7 @@
 						<div class="border_corner border_corner_right_bottom"></div>
 						<div class="main" style="height: 240px;"><!--在这里更改图表高度-->
 							<!-- 这里写内容 -->
-							<div class="title">
+							<div class="title" id="chinaMonthlyProvinceRainfall">
 								<h4>中国各省月度降水量</h4>
 							</div>
 							<div id="ParallelMap" style="height: 200px;"></div>
@@ -155,8 +155,9 @@
 						<div class="border_corner border_corner_right_bottom"></div>
 						<div class="main" style="height: 240px;"><!--在这里更改图表高度-->
 							<!-- 这里写内容 -->
-							<div class="title">
-								<h4>灾害词云</h4>
+							<div class="title" style="display: flex;">
+								<h4>2020年灾害词云</h4>
+								<h5 style="font-size: 5px;color: #b0b0b0;padding-left: 70px;">数据来源于OWID组织</h5>
 							</div>
 							<div id="WordcloudMap" style="height: 200px;"></div>
 						</div>

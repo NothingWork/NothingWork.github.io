@@ -66,7 +66,7 @@ $.ajax({
                 },
                 grid:{
                     right:"5%",
-                    left:"35%",
+                    left:"15%",
                     // containLabel: true
                 },
                 tooltip: {

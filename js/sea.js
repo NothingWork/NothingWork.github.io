@@ -48,10 +48,35 @@ $.ajax({
         },
         xAxis: {
             type: 'category',
-            data: year3
+            data: year3,
+            axisLine: { 
+                onZero: false,
+                lineStyle:{
+                    color:'#1b645d',
+                }
+            },
         },
         yAxis: {
-            type: 'value'
+            type: 'value',
+            axisLine: { 
+                onZero: false,
+                lineStyle:{
+                    color:'#1b645d',
+                }
+            },
+        },
+        dataZoom: [{
+            type: 'inside', //缩放滑动条 inside无
+            show: true, //开启
+            yAxisIndex: [0], //Y轴滑动
+            
+        }],
+        grid:{
+                // show:false,
+                top:'8%',    // 一下数值可为百分比也可为具体像素值
+                // right:'5%',
+                // bottom:'10%',
+                // left:'10%'
         },
         legend: {
             data: ['美国', '英国', '中国', '印度', '俄罗斯','日本']

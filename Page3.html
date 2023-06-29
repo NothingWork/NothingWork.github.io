@@ -52,7 +52,7 @@
 							<div class="control" style="font-weight: normal;">
 								<a href="index.html">各国污染排放变化</a>
 								<a href="Page2.html">气候变化具体表现</a>
-								<a href="Page3.html">气候变化危害</a>
+								<a href="Page3.html" id="controlbutton">气候变化危害</a>
 
 							</div>
 							<div style="padding-top: 6px;">
@@ -72,7 +72,7 @@
 					</div>
 				</div>
 
-				
+
 			</li>
 
 
@@ -90,14 +90,14 @@
 						<div class="main" style="height: 400px;"><!--在这里更改图表高度 上下加起来640px-->
 							<!-- 这里写内容 -->
 							<div class="title">
-								<h4>全球气候风险指数</h4>
+								<h4>2000年全球气候风险指数</h4>
 							</div>
 							<div id="worldMapOfDisaster" style="height: 355px;"></div>
 							<script type="text/javascript" src="js/worldMapOfDisaster.js"></script>
 						</div>
 					</div>
 				</div>
-				
+
 			</li>
 
 
@@ -123,28 +123,16 @@
 
 			</li>
 		</ul>
-		<ul style="display: flex;">
-			<li style="width: 100%;height: 140px;">
-				<div style="background-color: #db2a1c;">
-					<p
-						style="color:#ffffff ; font-size: 30px ;font-weight: bold;text-align: left;">
-						超过<span style="font-size: 45px;">42,100</span>种物种面临灭绝的威胁
-					</p>
-					<span style="color:#ffffff ; font-size: 26px;">
-						这仅是估算物种的28%
-					</span>
-					<br>
-					<div style="width: 100%;height:30px;">
-						<p class="imgstyle">
-							<img width="100%" src="img/濒危.png">
-						</p>
-		
-					</div>
+		<ul style="display: flex;" >
+			<li style="width: 65%;height: 80px;">
+				<div id="image-container" style="height: 80px;">
+					<img src="image/濒危.png" alt="Image 1" >
+					<script type="text/javascript" src="js/changeImg.js"></script>
 				</div>
 
 			</li>
 			<li>
-				<div class="box-in">
+				<div class="box-in" style="width: 120%;">
 					<!-- 框 -->
 					<div class="win">
 						<!-- 四个角的边框效果 -->
@@ -157,7 +145,7 @@
 							<div class="title">
 								<h4>1900-2020年灾害导致的经济损失</h4>
 							</div>
-							<div id="pointMap" style="height: 200px;width: 200px;"></div>
+							<div id="pointMap" style="height: 200px;"></div>
 							<script type="text/javascript" src="js/PointMap.js"></script>
 						</div>
 					</div>
@@ -165,7 +153,7 @@
 
 			</li>
 		</ul>
-		
+
 	</div>
 
 
@@ -175,13 +163,14 @@
 </html>
 
 <style>
-	.imgstyle{
+	.imgstyle {
 		display: flex;
-  		width: 100%;
-  		height: 160px;
+		width: 100%;
+		height: 160px;
 	}
+
 	img {
-  object-fit: cover;
-  object-position: center;
-}
+		object-fit: cover;
+		object-position: center;
+	}
 </style>
