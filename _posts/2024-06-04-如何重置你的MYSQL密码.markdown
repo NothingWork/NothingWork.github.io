@@ -1,0 +1,59 @@
+---
+layout: post
+title:  "如何重置你的MYSQL密码"
+date:   2024-06-04 18:03:00 +0800
+categories: jekyll update
+---
+
+## 1. 关闭正在运行的MySQL服务
+
+在任务管理器中找到MySQL对应的服务,然后将其停止
+![](/pictures/001/1.png)
+
+## 2. 打开CMD命令行窗口，转到mysql\bin目录
+
+## 3. 输入mysqld --skip-grant-tables 回车
+
+> 备注：--skip-grant-tables；启动MySQL服务的时候跳过权限表认证
+
+![](/pictures/001/3.png)
+
+## 4. 连接MySQL
+
+再开一个CMD命令行窗口（因为刚才那个DOS窗口已经不能动了），并转到mysql\bin目录
+输入mysql回车，如果成功，将出现MySQL提示符界面
+![](/pictures/001/4.png)
+
+## 5. 连接权限数据库表
+
+```
+use mysql;
+```
+
+![](/pictures/001/5.png)
+
+## 7. 改密码
+
+运行如下命令修改root用户的密码为root
+
+```
+UPDATE user SET authentication_string=PASSWORD("root") WHERE User="root";
+```
+
+![](/pictures/001/7.png)
+
+> mysql5.7以前的版本请使用 ··update user set password=password("root") where user="root";··
+
+## 8. 刷新权限
+
+由于密码修改后不会立即生效，请调用如下命令刷新权限使其生效。
+
+```
+flush privileges;
+```
+
+![](/pictures/001/8.png)
+
+## 9.修改完成
+
+退出 quit。 再次进入时，就可以使用用户名root和刚才设置的新密码登录。
