@@ -26,7 +26,7 @@ email: 1093511773@qq.com # 邮箱
 # 这里在右下角可以写上一些描述。
 description: >- # this means to ignore newlines until "baseurl:"  写上一些描述
   :D
-baseurl: "/blog" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "NothingWork.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb 推特联系方式
 github_username:  NothingWork #github地址
