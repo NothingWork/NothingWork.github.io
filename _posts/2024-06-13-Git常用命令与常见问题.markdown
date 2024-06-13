@@ -1,0 +1,48 @@
+---
+layout: post
+title:  "Git常用命令与常见问题"
+date:   2024-06-013 12:00:00 +0800
+categories: jekyll update
+---
+
+## 1.git仓库建立连接
+
+每个项目建立一次连接就行
+
+### 1.本地代码初始化
+
+``` cmd
+git init 
+```
+
+### 2.连接远程仓库
+
+``` cmd
+git remote add <remote_name> <remote_url>
+```
+
+## 2. git代码提交
+
+### 1.本地代码提交
+
+``` cmd
+git add .
+git commit -m "提交信息"
+```
+
+### 2.创建新分支并切换分支
+
+```cmd
+git branch <branch_name>
+git checkout <branch_name>
+git branch
+```
+
+确保你现在的分支是你想要上传代码的分支(绿色带 *)
+![alt text](/pictures/003/1.jpg)
+
+### 3.本地代码推送至github
+
+```cmd
+git push <remote_name>
+```
