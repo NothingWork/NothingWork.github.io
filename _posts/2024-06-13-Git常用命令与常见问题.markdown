@@ -11,6 +11,9 @@ categories: jekyll update
   - [1.本地代码提交](#1本地代码提交)
   - [2.创建新分支并切换分支](#2创建新分支并切换分支)
   - [3.本地代码推送至github](#3本地代码推送至github)
+- [3.拉取代码](#3拉取代码)
+- [1.克隆仓库](#1克隆仓库)
+- [2.拉取代码](#2拉取代码)
 
 ## 1.git仓库建立连接
 
@@ -18,13 +21,13 @@ categories: jekyll update
 
 ### 1.本地代码初始化
 
-``` cmd
+``` sh
 git init  git初始化
 ```
 
 ### 2.连接远程仓库
 
-``` cmd
+``` sh
 git remote add <remote_name> <remote_url>  建立远程仓库连接，name是名字自己起
 ```
 
@@ -32,14 +35,14 @@ git remote add <remote_name> <remote_url>  建立远程仓库连接，name是名
 
 ### 1.本地代码提交
 
-``` cmd
+``` sh
 git add .  所有代码文件加入本地仓库
 git commit -m "提交信息"  提交代码至本地仓库
 ```
 
 ### 2.创建新分支并切换分支
 
-```cmd
+```sh
 git branch <branch_name>  新建分支
 git checkout <branch_name>  切换分支
 git branch  查看当前分支
@@ -50,6 +53,24 @@ git branch  查看当前分支
 
 ### 3.本地代码推送至github
 
-```cmd
+```sh
 git push <remote_name>
+```
+
+## 3.拉取代码
+
+## 1.克隆仓库
+
+将目标仓库中想要复制的分支复制到本地目录中
+
+```sh
+git clone -b <branch_name> <url> <dir>   复制指定仓库指定分支到指定目录
+```
+
+## 2.拉取代码
+
+拉取更新代码
+
+```sh
+git pull <remote_name> <branch_name>  将远程代码与本地指定分支合并 
 ```
