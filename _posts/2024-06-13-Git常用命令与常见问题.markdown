@@ -43,10 +43,27 @@ git remote remove <remote_name>               //删除远程连接
 
 ### 1.本地代码提交
 
+提交代码时通常采用先将代码提交至缓存，在将代码从缓存区移植本地仓库中
+
 ``` sh
-git add .                   //所有代码文件加入本地仓库
+git add .                   //所有代码文件加入缓存
 git commit -m "提交信息"    //提交代码至本地仓库
 ```
+
+如果觉得git add提交缓存的流程过于繁琐，也可以使用以下命令：
+
+```sh
+git commit -am "提交信息"   //将代码提交缓存并移至仓库
+```
+
+现在我们已经将代码移至仓库，如果我们执行git status：
+
+```sh
+git status                //查看状态
+nothing to commit (working directory clean)
+```
+
+以上输出说明我们在最近一次提交之后，没有做任何改动.。
 
 ### 2.创建新分支并切换分支
 
