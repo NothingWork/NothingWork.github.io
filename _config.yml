@@ -21,7 +21,7 @@
 
 list_title: 一些随笔~ #主页面小标题
 title: 自闭小屋 #标题
-footDesc: 一些召唤方法 #页面底部描述标签
+footDesc: 传送门 #页面底部描述标签
 email: 1093511773@qq.com # 邮箱
 # 这里在右下角可以写上一些描述。
 description: >- # this means to ignore newlines until "baseurl:"  写上一些描述
