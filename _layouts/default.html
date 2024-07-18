@@ -1,23 +1,16 @@
 <!DOCTYPE html>
-<!-- 引入鼠标点击特效 -->
-<script src="/assets/plugins/cursor-heart.js"></script>
-
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
-
+<!-- html元数据引入 -->
   {%- include head.html -%}
-
   <body >
-    <!-- 头部标题区域 -->
-    {%- include header.html -%}
+    <!-- 右侧侧边栏 -->
+    {%- include leftSide.html -%}
     <!-- 主题内容区域 -->
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
         {{ content }}
       </div>
     </main>
-    <!-- 底部区域 -->
-    {%- include footer.html -%}
-
+    <!-- 猫猫装饰 -->
     {%- include cat.html -%}
   </body>
 </html>
@@ -25,6 +18,7 @@
   body{
     background-image:linear-gradient(-225deg,#9EFBD3 0%, #57E9F2 48%, #45D4FB 100%)
   }
+  /* 分区卡片 */
   .wrapper{
     background-color: rgba(255, 255, 255, 0.705);
     border-radius: 15px;

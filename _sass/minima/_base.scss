@@ -3,7 +3,7 @@
  */
 body, h1, h2, h3, h4, h5, h6,
 p, blockquote, pre, hr,
-dl, dd, ol, ul, figure {
+dl, dd, ol, ul, figure,button {
   margin: 0;
   padding: 0;
 }
@@ -250,5 +250,26 @@ table {
   }
   td {
     border: 1px solid $grey-color-light;
+  }
+}
+
+
+// 基础方形圆角按钮
+.basicBtn {
+  width: 60px;
+  height: 60px;
+  border-radius: 15px;
+  background-color: #333333;
+  border: 3px solid #333333;
+  margin: 5px 10px 5px 10px;
+  transition: all 400ms;
+  cursor: pointer;
+}
+.basicBtn:hover {
+  background-color: transparent;
+  svg{
+    path{
+      fill: #333333;
+    }
   }
 }

@@ -1,3 +1,4 @@
+<!-- 头部元数据引入 -->
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -6,10 +7,8 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
-  {%- seo -%}
-  <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
-  {%- feed_meta -%}
-  {%- if jekyll.environment == 'production' and site.google_analytics -%}
-    {%- include google-analytics.html -%}
-  {%- endif -%}
+    <!-- 引入css样式文件 -->
+    <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+    <!-- 引入鼠标点击特效插件 -->
+    <script src="/assets/plugins/cursor-heart.js"></script>
 </head>
