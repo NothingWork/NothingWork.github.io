@@ -2,10 +2,12 @@
 <!-- html元数据引入 -->
   {%- include head.html -%}
   <body >
-    <!-- 右侧侧边栏 -->
-    {%- include leftSide.html -%}
-    <!-- 主题内容区域 -->
-    <main class="page-content" aria-label="Content">
+    <!-- 头部区域 -->
+    {%- include header.html -%}
+    <!-- 主体内容区域 -->
+    <main >
+      <!-- 搜索结果区域 -->
+      {%- include search.html -%}
       <div class="wrapper">
         {{ content }}
       </div>
@@ -15,13 +17,5 @@
   </body>
 </html>
 <style>
-  body{
-    background-image:linear-gradient(-225deg,#9EFBD3 0%, #57E9F2 48%, #45D4FB 100%)
-  }
-  /* 分区卡片 */
-  .wrapper{
-    background-color: rgba(255, 255, 255, 0.705);
-    border-radius: 15px;
-    padding-top: 5px;
-  }
+
 </style>

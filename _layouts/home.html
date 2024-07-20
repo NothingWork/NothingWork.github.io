@@ -2,26 +2,35 @@
 layout: default
 ---
 
-<div class="home">
-
+<div style="display: block">
   <!-- 渲染各个文章 -->
-  {%- if site.posts.size > 0 -%} 
-    <ul class="post-list">
-      {%- for post in site.posts -%}
-      <li>
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h3>
-        {%- if site.show_excerpts -%}
-          {{ post.excerpt }}
-        {%- endif -%}
-      </li>
-      {%- endfor -%}
-    </ul>
-  {%- endif -%}
-
+  {%- if site.posts.size > 0 -%}
+  <!-- 循环遍历 -->
+  {%- for post in site.posts -%}
+  <div class="articleList">
+    <!--文章标题  -->
+    <a href="{{ post.url | relative_url }}">
+        <!-- 左侧 -->
+        <div class="left">
+          <h2>{{ post.title }}</h2>
+          <!-- 文章摘要 -->
+          <span class="excerpt"> {{ post.excerpt }} </span>
+        </div>
+        <!-- 右侧 -->
+        <div class="right">
+          <!-- 文章上传日期 -->
+          <img
+            src="/assets/png/date.png"
+            alt=""
+            width="20px"
+            height="20px"
+            style="margin-right: 5px"
+          />
+          {%- assign date_format = "%Y-%m-%-d" -%} {{ post.date | date:
+          date_format }}
+        </div>
+    </a>
+  </div>
+  {%- endfor -%} {%- endif -%}
 </div>
+
