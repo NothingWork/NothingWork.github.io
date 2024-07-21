@@ -179,3 +179,29 @@ background-color: rgba(255, 255, 255, 0.705);
     }
   }
 }
+
+// 侧边目录
+.contents{
+  position: fixed;
+  left: 0;
+  top: 100px;
+  width: 12%;
+  background-color: rgba(255, 255, 255, 0.585);
+  border-radius: 15px;
+  #toc{
+    h3{
+      text-align: center;
+    }
+    ul{
+      li{
+        a{
+          color: $grey-color;
+          text-decoration: none;
+          &:hover{
+            color: $blue-color;
+          }
+        }
+      }
+    }
+  }
+}
