@@ -10,17 +10,18 @@ layout: default
   <div class="articleList">
     <!--文章标题  -->
     <a href="{{ post.url | relative_url }}">
-        <!-- 左侧 -->
-        <div class="left">
-          <h2>{{ post.title }}</h2>
-          <!-- 文章摘要 -->
-          <span class="excerpt"> {{ post.excerpt }} </span>
-        </div>
-        <!-- 右侧 -->
-        <div class="right">
-          <!-- 文章上传日期 -->
+      <!-- 左侧 -->
+      <div class="left">
+        <h2>📌{{ post.title }}</h2>
+        <!-- 文章摘要 -->
+        <span class="excerpt"> {{ post.excerpt }} </span>
+      </div>
+      <!-- 右侧 -->
+      <div class="right">
+                <!-- 文章上传日期 -->
+        <div class="article-props">
           <img
-            src="/assets/png/date.png"
+            src="/assets/imgs/date.png"
             alt=""
             width="20px"
             height="20px"
@@ -29,8 +30,19 @@ layout: default
           {%- assign date_format = "%Y-%m-%-d" -%} {{ post.date | date:
           date_format }}
         </div>
+        <!-- 文章分类 -->
+        <div class="article-props">
+          <img
+            src="/assets/imgs/category.png"
+            alt=""
+            width="20px"
+            height="20px"
+            style="margin-right: 5px"
+          />
+          {{ post.category }}
+        </div>
+      </div>
     </a>
   </div>
   {%- endfor -%} {%- endif -%}
 </div>
-

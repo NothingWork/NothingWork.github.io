@@ -12,7 +12,8 @@ $spacing-unit:     30px !default;
 
 $text-color:       #111 !default;
 $background-color: #fdfdfd !default;
-$brand-color:      #2a7ae2 !default;
+$blue-color:      #2a7ae2 !default;
+$blue-color-dark:  darken($blue-color, 25%) !default;
 
 $grey-color:       #333333;
 $grey-color-light: lighten($grey-color, 40%) !default;
@@ -28,6 +29,7 @@ $on-laptop:        800px !default;
 
 // 卡片使用的透明白色
 $card-white:rgba(255, 255, 255, 0.705);
+
 
 
 // Use media queries like this:

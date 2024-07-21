@@ -1,0 +1,51 @@
+---
+permalink: /category
+layout: default
+---
+
+<!-- 分类页面 -->
+{%- for category in site.categories -%}
+<div class="categories">
+  <div class="category-title" style="display: flex">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1.5em"
+      height="1.5em"
+      viewBox="0 0 24 24"
+      class="category-arrow-svg"
+    >
+      <path
+        fill="gray"
+        d="m8.006 21.308l-1.064-1.064L15.187 12L6.942 3.756l1.064-1.064L17.314 12z"
+      />
+    </svg>
+    <!-- 分类标题 -->
+    <h2>📁{{ category.first }}</h2>
+  </div>
+  <!-- 文章标题 -->
+  <div class="category-contents" >
+  {%- for post in category.last -%}
+      <span onclick="goSite('{{ post.url }}')" id="1">📌{{ post.title }}</span>
+  </div>
+</div>
+{%-endfor-%} {%- endfor -%}
+
+<script>
+    // 控制文件夹的展开与关闭
+    $(function(){
+        var list = $('.category-contents')
+        $('.category-arrow-svg').each((index,dom) => {
+            $(dom).click(() => {
+                if($(dom).css("transform") == "none"){
+                    $(dom).css("transform","rotate(90deg)")
+                    $(list[index]).slideDown()
+                }
+                else{
+                    $(dom).css("transform","none")
+                    $(list[index]).slideUp() 
+                }
+            })
+        })
+    })
+</script>
+

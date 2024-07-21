@@ -2,7 +2,7 @@
 layout: post
 title:  "如何重置你的MYSQL密码"
 date:   2024-06-04 18:03:00 +0800
-categories: jekyll update
+category: mysql
 ---
 
 忘记MySql密码时应该如如何操作，操作环境为windows，mysql

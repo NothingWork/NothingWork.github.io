@@ -65,7 +65,7 @@
 }
 
 
-// 主页文章目录显示,左右两栏
+// 主页文章目录显示
 .articleList{
   border-bottom: 1px solid gray;
   &:hover{
@@ -81,16 +81,19 @@ a{
       width: 80%;
       border-radius: 5px;
       .excerpt{
-        color: $grey-color
+        color: $grey-color;
+        font-family: $base-font-family;
       }
     }
     .right{
       width: 20%;
-      display: flex;
       position: relative;
       font-size: 12px;
-      font-weight:bold;
+      // font-weight:bold;
       color: #393e46;
+      .article-props{
+        margin: 20px 0;
+      }
     }
 }
 }
@@ -143,6 +146,36 @@ background-color: rgba(255, 255, 255, 0.705);
     margin: 10px 5%;
     h2{
       border-bottom: 1px solid gainsboro;
+    }
+  } 
+}
+
+// 分类文件夹
+.categories{
+  svg{
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    &:hover{
+      path{
+        fill: $blue-color;
+      }
+    }
+    margin-right: 10px;
+  }
+  h2{
+    color: $blue-color;
+    line-height: 20px;
+    margin-left: 10px;
+  }
+  .category-contents{
+    display: none;
+    margin: 10px 0 20px 5em;
+    span{
+      color: $grey-color;
+      cursor: pointer;
+      &:hover{
+        color: $blue-color;
+      }
     }
   }
 }

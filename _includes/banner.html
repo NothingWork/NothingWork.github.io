@@ -3,7 +3,7 @@
 <div class="banner">
   <!-- 按钮 -->
   <!-- 主页按钮 -->
-  <div class="basicBtn" onclick="goSite('https://NothingWork.github.io')">
+  <div class="basicBtn" onclick="goSite('/')">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="60"
@@ -47,7 +47,22 @@
     </svg>
     <span class="bottomToolip">前进</span>
   </div>
+<!-- 进入分类页面按钮 -->
+  <div class="basicBtn" onclick="goSite('/category')">
+    <svg xmlns="http://www.w3.org/2000/svg"
+      width="60"
+      height="60"
+      viewBox="0 0 24 24"
+      >
+        <path 
+          fill="#fff"
+          d="M4 20q-.825 0-1.412-.587T2 18V6q0-.825.588-1.412T4 4h5.175q.4 0 .763.15t.637.425L12 6h9q.425 0 .713.288T22 7t-.288.713T21 8H7.85q-1.55 0-2.7.975T4 11.45V18l1.975-6.575q.2-.65.738-1.037T7.9 10h12.9q1.025 0 1.613.813t.312 1.762l-1.8 6q-.2.65-.737 1.038T19 20z"/>
+    </svg>
+    <span class="bottomToolip">分类</span>
+  </div>
 
+  <!-- 搜索框 -->
+  <input class="search" placeholder="搜索"></input>
   <!-- github链接 -->
   <div class="basicBtn" onclick="goSite('https://github.com/NothingWork')">
     <svg
@@ -63,9 +78,7 @@
     </svg>
     <span class="bottomToolip">github</span>
   </div>
-  
-  <!-- 搜索框 -->
-  <input class="search" placeholder="搜索"></input>
+
 
   <!-- 个人网站 -->
   <div class="basicBtn" onclick="goSite('https://nots.fun')">
@@ -74,8 +87,3 @@
   </div>
 </div>
 
-<script>
-  function goSite(site) {
-    window.location.href = site;
-  }
-</script>
