@@ -255,6 +255,10 @@ table {
       opacity: 1;
     }
   }
+// 在手机上不显示
+@include media-query($on-phone){
+  display: none;
+}
 }
 
 
@@ -288,10 +292,22 @@ table {
 .search{
   outline: none;
   border: none;
-  width: 40%;height: 20px;
+  width: 30%;
+  height: 20px;
   padding-top: 30px;
   position: relative;
   background-color: transparent;
   border-bottom: 3px solid $grey-color;
   font-size: large;
+  @include media-query($on-phone){
+    width: 100%;
+  }
+}
+
+//装饰用的猫猫头
+.cat{
+  //在手机屏幕上不显示
+  @include media-query($on-phone){
+    display: none;
+  }
 }

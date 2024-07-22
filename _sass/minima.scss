@@ -24,8 +24,8 @@ $table-text-align: left !default;
 // Width of the content area
 $content-width:    800px !default;
 
-$on-palm:          600px !default;
-$on-laptop:        800px !default;
+$on-phone:          600px !default; // 手机
+$on-laptop:        800px !default; // 笔记本电脑
 
 // 卡片使用的透明白色
 $card-white:rgba(255, 255, 255, 0.705);

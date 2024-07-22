@@ -109,15 +109,13 @@ background-color: rgba(255, 255, 255, 0.705);
 // 网站头部区域
 .header{
   position: relative;
-  display: block;
   background-color: $card-white;
   height: 80px;
-  width: 74%;
-  left: 50%;
+  // width: 74%;
   margin-bottom: 30px;
-  transform: translateX(-50%);
   .banner{
     display: flex;
+
   }
 }
 
@@ -148,6 +146,9 @@ background-color: rgba(255, 255, 255, 0.705);
       border-bottom: 1px solid gainsboro;
     }
   } 
+  @include media-query($on-phone){
+    width: 80%;
+  }
 }
 
 // 分类文件夹
@@ -180,7 +181,7 @@ background-color: rgba(255, 255, 255, 0.705);
   }
 }
 
-// 侧边目录
+// 文章侧边目录
 .contents{
   position: fixed;
   left: 0;
@@ -203,5 +204,8 @@ background-color: rgba(255, 255, 255, 0.705);
         }
       }
     }
+  }
+  @include media-query($on-phone){
+    display: none;
   }
 }
