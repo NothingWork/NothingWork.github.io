@@ -111,11 +111,9 @@ background-color: rgba(255, 255, 255, 0.705);
   position: relative;
   background-color: $card-white;
   height: 80px;
-  // width: 74%;
   margin-bottom: 30px;
   .banner{
     display: flex;
-
   }
 }
 
@@ -196,11 +194,7 @@ background-color: rgba(255, 255, 255, 0.705);
     ul{
       li{
         a{
-          color: $grey-color;
-          text-decoration: none;
-          &:hover{
-            color: $blue-color;
-          }
+          @extend .basicA
         }
       }
     }

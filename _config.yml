@@ -28,11 +28,14 @@ permalink: "/:title"
 # 如果文章没写分类则默认为blog
 permalink_defaults:
   category: "blog"
+# 分页
+paginate: 5 
 
 # Build settings
 theme: minima #主题
 plugins: #插件
   - jekyll-feed
+  - jekyll-paginate
 
 # Exclude from processing.
 # The following items will not be processed, by default.

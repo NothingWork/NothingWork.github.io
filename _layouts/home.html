@@ -3,10 +3,8 @@ layout: default
 ---
 
 <div style="display: block">
-  <!-- 渲染各个文章 -->
-  {%- if site.posts.size > 0 -%}
-  <!-- 循环遍历 -->
-  {%- for post in site.posts -%}
+  <!-- 循环遍历渲染文章 -->
+  {%- for post in paginator.posts -%}
   <div class="articleList">
     <!--文章标题  -->
     <a href="{{ post.url | relative_url }}">
@@ -44,5 +42,13 @@ layout: default
       </div>
     </a>
   </div>
-  {%- endfor -%} {%- endif -%}
+  {%- endfor -%} 
+    <!-- 分页区域 -->
+  <div style="align-items: center;justify-content: center;display: flex;flex-direction: column;">
+    {%- include page.html -%}
+  </div>
 </div>
+
+<script>
+
+</script>

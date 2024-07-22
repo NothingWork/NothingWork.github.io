@@ -159,7 +159,7 @@ pre {
   padding-left: $spacing-unit;
   @extend %clearfix;
 
-  @include media-query($on-laptop) {
+  @include media-query($on-phone) {
     max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
     max-width:         calc(#{$content-width} - (#{$spacing-unit}));
     padding-right: $spacing-unit / 2;
@@ -261,6 +261,14 @@ table {
 }
 }
 
+//基础a标签
+.basicA{
+  color: $grey-color;
+  text-decoration: none;
+  &:hover{
+    color: $blue-color;
+  }
+}
 
 //底部文字提示框
 .bottomToolip{
@@ -307,6 +315,22 @@ table {
 //装饰用的猫猫头
 .cat{
   //在手机屏幕上不显示
+  @include media-query(1000px){
+    display: none;
+  }
+}
+
+// 每日一言
+#content{
+  position: fixed;
+  right: 0;top: 15%;
+  width: 10%;
+  margin: 10px 10px;
+  padding: 5px 10px; 
+  color: white;
+  background-color: rgb(34, 33, 29);
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px $grey-color;
   @include media-query($on-phone){
     display: none;
   }
