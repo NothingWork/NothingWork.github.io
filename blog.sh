@@ -16,7 +16,7 @@ else
     # 写入内容
     echo -e "---
 layout: post
-title: $file_name
+title: \"$file_name\"
 date: $current_time +8000
 category: $file_category
 ---" >$filePath
