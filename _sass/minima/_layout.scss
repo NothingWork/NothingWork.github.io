@@ -129,6 +129,7 @@ background-color: rgba(255, 255, 255, 0.705);
   overflow-y: auto;
   border-radius: 5px;
   box-shadow: 0 0 10px gray;
+  z-index: 9999;
   a{
     position: relative;
     display: flex;
