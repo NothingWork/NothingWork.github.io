@@ -17,9 +17,10 @@ else
     echo -e "---
 layout: post
 title: \"$file_name\"
-date: $current_time +8000
+date: $current_time +0800
 category: $file_category
----" >$filePath
+---
+摘要：" >$filePath
     code $filePath  # 打开
     echo "创建成功"
 fi

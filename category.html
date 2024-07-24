@@ -25,10 +25,12 @@ layout: default
   <!-- 文章标题 -->
   <div class="category-contents" >
   {%- for post in category.last -%}
-      <span onclick="goSite('{{ post.url }}')" id="1">📌{{ post.title }}</span>
+      <span onclick="goSite('{{ post.url }}')" id="1">📌{{ post.title }}</span> <br/>
+  {%-endfor-%} 
   </div>
 </div>
-{%-endfor-%} {%- endfor -%}
+
+{%- endfor -%}
 
 <script>
     // 控制文件夹的展开与关闭
