@@ -23,7 +23,7 @@ docker network create --subnet=172.20.0.0/16 hnet
 
 ## 启动多个容器
 
-有了之前配置好的hadoop镜像，我们这里就可以直接以这个镜像启动斗个多个容器（一主二从）。
+有了之前配置好的hadoop镜像，我们这里就可以直接以这个镜像启动多个容器（一主二从）。
 
 ```ssh
 docker run -d --name=nn --network=hnet --ip=172.20.1.1 -p 9870:9870 -p 8088:8088 --privileged cluster_proto /usr/sbin/init
@@ -32,10 +32,6 @@ docker run -d --name=dn2 --network=hnet --ip=172.20.1.3 --privileged cluster_pro
 ```
 
 需要注意的是，我们在启动namenode容器时将端口9870和8088进行了映射，那么后续只需要访问宿主机的主机地址即可以进入hadoop提供的web页面。
-
-***思路更新***
-既然我们已经有一台主机，那么我们可以将这台主机作为集群当中的nn(namenode)节点主机，使用docker创建的容器作为从机。
-这样，我们就可以省去配置端口映射的问题，并且后续的hive等的配置也可以只在我们的主机上进行修改配置即可。
 
 ## 配置ssh免密登录
 
