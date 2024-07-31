@@ -26,21 +26,11 @@ docker network create --subnet=172.20.0.0/16 hnet
 有了之前配置好的hadoop镜像，我们这里就可以直接以这个镜像启动多个容器（一主二从）。
 
 ```ssh
-docker run -d --name=nn --network=hnet --ip=172.20.1.1 -p 9870:9870 -p 8088:8088 --privileged cluster_proto /usr/sbin/init
-docker run -d --name=dn1 --network=hnet --ip=172.20.1.2 --privileged cluster_proto /usr/sbin/init
-docker run -d --name=dn2 --network=hnet --ip=172.20.1.3 --privileged cluster_proto /usr/sbin/init
-```
+docker run -d --name=nn  --hostname=nn --network=hnet --ip=172.20.1.0  --privileged --add-host=dn1:172.20.1.1 --add-host=dn2:172.20.1.2 cluster_proto /usr/sbin/init 
 
-需要注意的是，我们在启动namenode容器时将端口9870和8088进行了映射，那么后续只需要访问宿主机的主机地址即可以进入hadoop提供的web页面。
+docker run -d --name=dn1 --hostname=dn1  --network=hnet --ip=172.20.1.1 --privileged --add-host=nn:172.20.1.0 --add-host=dn2:172.20.1.2 cluster_proto /usr/sbin/init 
 
-## 配置ssh免密登录
-
-首先进入dn1容器，生成ssh密钥后，将密钥发至dn1,dn2两台机器。
-
-```ssh
-ssh-keygen  -这里一路回车就行
-ssh-copy-id hadoop@dn1
-ssh-copy-id hadoop@dn2
+docker run -d --name=dn2 --hostname=dn2  --network=hnet --ip=172.20.1.2 --privileged --add-host=nn:172.20.1.0 --add-host=dn1:172.20.1.1 cluster_proto /usr/sbin/init
 ```
 
 ## 格式化并启动
@@ -48,6 +38,16 @@ ssh-copy-id hadoop@dn2
 ```ssh
 hdfs namenode -format
 start-dfs.sh
+```
+
+## 添加端口映射
+
+因为我们需要访问namenode所在容器的端口来使用hadoop的服务，所以我们可以通过防火墙，将容器的端口转发至宿主机中
+
+```ssh
+iptables -t nat -A DOCKER -p tcp --dport 宿主机端口 -j DNAT --to-destination 容器ip:容器端口
+iptables-save  -保存
+
 ```
 
 此时访问9870端口即可看到我们配置好的hadoop集群
