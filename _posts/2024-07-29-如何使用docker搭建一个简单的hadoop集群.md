@@ -37,7 +37,7 @@ docker run -d --name=dn2 --hostname=dn2  --network=hnet --ip=172.20.1.2 --privil
 
 ```ssh
 hdfs namenode -format
-start-dfs.sh
+start-all.sh
 ```
 
 ## 添加端口映射
