@@ -28,7 +28,7 @@
   // 获取每日一言
   $(function(){
     $.get("https://api.xygeng.cn/one",(res)=>{
-      if(res.code===200)$("#content").text(res.data.content+"——"+res.data.origin)
+      if(res.code===200)$("#content").text("✍"+res.data.content+"——"+res.data.origin)
     })
   })
 </script>
