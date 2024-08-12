@@ -11,6 +11,8 @@ var data = [], //数字组
 var lastKeyDownTiem = 0; //记录键盘点击时间
 // 初始化游戏
 function gameInit() {
+  //关闭遮罩层
+  cover.style.display = "none";
   // 清屏
   clearAll();
   //打开生成开关
@@ -63,26 +65,30 @@ window.addEventListener("keyup", function (e) {
 //为单元格初始化数字: 个数,2所占比例
 function genNum(size, prop) {
   // 随机在两个坐标生成初始数
-  let sucNum = 0, //标记生成成功的数量 
-  count = 0, //遍历计数
-  nums = [];//已经生成的数
+  let sucNum = 0, //标记生成成功的数量
+    count = 0, //遍历计数
+    nums = []; //已经生成的数
   while (1) {
     count++;
     // 随机选择一个格子
     const index = Math.floor(Math.random() * colnum * rownum);
     // 生成随机数重复
-    if(nums.includes(index)) continue;
-    nums.push(index)
-    const cell = cells[index];
-    //格子全满
-    if (count == colnum * rownum) {
-      //检查是否失败
-      if (!checkCell()) {
-        result.innerHTML = "失败"
-        cover.style.display = "flex";
+    if (nums.includes(index)) {
+      //格子全满
+      if (count == colnum * rownum) {
+        //检查是否失败
+        if (!checkCell()) {
+          result.innerHTML = "失败";
+          cover.style.display = "flex";
+        }
+        break;
       }
-      break;
+      // 格子未满
+      else continue
     }
+    nums.push(index);
+    const cell = cells[index];
+
     if (Number(cell.innerHTML) == 0) {
       //判断是否允许生成
       if (!ifGen) break;
@@ -133,7 +139,6 @@ function move(x, y) {
             : (colnum - 1 - j) * (colnum - (colnum - 1) * x) +
               i * (colnum - (colnum - 1) * y),
         num = Number(cells[index].innerHTML); //网格数字
-      // console.log(index);
       if (num == 0) {
         //记录零的个数
         countZero++;
@@ -143,9 +148,7 @@ function move(x, y) {
         //记录之前的0个数
         const z = countZero;
         //清空自己
-        changeCell(index,0,false)
-        // cells[index].innerHTML = "";
-        // cells[index].className = "cell";
+        changeCell(index, 0, false);
         //创造并添加克隆节点
         const node = document.createElement("div");
         node.className = "cloneCell n" + num;
@@ -171,10 +174,10 @@ function move(x, y) {
   }
   //等待遍历循环完成
   setTimeout(() => {
-      //是第一次移动，调用合并
-      if (flag) mix(x, y);
-      //不是第一次移动，生成新网格数据
-      else genNum(1, 1);
+    //是第一次移动，调用合并
+    if (flag) mix(x, y);
+    //不是第一次移动，生成新网格数据
+    else genNum(1, 1);
   }, 130);
 }
 
@@ -192,7 +195,6 @@ function mix(x, y) {
             i * (colnum - (colnum - 1) * y);
       // 下一网格的索引
       const nextIndex = index - x - y * colnum;
-      // console.log("index:"+index+"|nextIndedx:"+nextIndex)
       const num1 = Number(cells[index].innerHTML);
       const num2 = Number(cells[nextIndex].innerHTML);
       if (num1 != 0 && num1 == num2) {
@@ -201,9 +203,8 @@ function mix(x, y) {
         changeCell(index, 0, false);
         j++; //不再重复合成
         //判断是否合成了2048
-        console.log(num2*2)
-        if(num2*2 == 2048) {
-          result.innerHTML = "成功"
+        if (num2 * 2 == 2048) {
+          result.innerHTML = "成功";
           cover.style.display = "flex";
         }
       }
@@ -220,13 +221,11 @@ function checkCell() {
       const index = j + i * colnum;
       const num = Number(cells[index].innerHTML);
       const numDown = Number(cells[index + colnum].innerHTML);
-      // console.log("index:"+index+"|next:"+(index+colnum))
       if (num == numDown) {
         return true;
       }
       if (j != colnum - 1) {
         const numRight = Number(cells[index + 1].innerHTML);
-        // console.log("index:"+index+"|next:"+(index+1))
         if (num == numRight) {
           return true;
         }
