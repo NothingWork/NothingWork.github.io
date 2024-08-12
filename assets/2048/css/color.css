@@ -1,0 +1,76 @@
+/* 不同数字块的颜色 */
+
+.n0{
+    /* 0数字块即为空值数字块，颜色不变，字体颜色与背景色一致 */
+    color: transparent;
+}
+.n2 {
+    font-size: 65px;
+    background-color: #eee3da;
+}
+
+.n4 {
+    font-size: 65px;
+    background-color: #efe0c8
+}
+
+.n8 {
+    font-size: 65px;
+    background-color: #f2b179
+}
+
+.n16 {
+    font-size: 60px;
+    color: white;
+    background-color: #f59563
+}
+
+.n32 {
+    font-size: 60px;
+    color: white;
+    background-color: #f67c5f
+}
+
+.n64 {
+    font-size: 60px;
+    color: snow;
+    background-color: #f65e36
+}
+
+.n128 {
+    font-size: 55px;
+    color: snow;
+    background-color: #edcf72
+}
+
+.n256 {
+    font-size: 55px;
+    color: snow;
+    background-color: #edcc61
+}
+
+.n512 {
+    font-size: 55px;
+    color: snow;
+    background-color: #9c0
+}
+
+.n1024 {
+    font-size: 45px;
+    color: snow;
+    background-color: #3365a5
+}
+
+.n2048 {
+    font-size: 45px;
+    color: snow;
+    background-color: #09c
+}
+
+.n4096 {
+    background-color: #a6c
+}
+
+.n8192 {
+    background-color: #93c
+}

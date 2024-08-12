@@ -1,0 +1,94 @@
+/* 基础图形 */
+.main {
+  width: 1000px;
+  height: 520px;
+  background-color: bisque;
+  position: fixed;
+  left: 50%;
+  top: 10%;
+  transform: translate(-50%);
+  border-radius: 15px;
+  border: 5px dashed #daa06d;
+  box-shadow: 0 0 0 4px bisque;
+  padding: 5px;
+}
+.game_title {
+  position: absolute;
+  left: 18%;
+  font-size: 60px;
+  font-weight: bold;
+  color: #776e65;
+}
+.info{
+    position: absolute;
+    top: 20%;left: 10%;
+    width: 300px;
+    font-size: 20px;
+}
+.new_game {
+  position: absolute;
+  left: 17.5%;
+  top: 60%;
+  border: none;
+  width: 150px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: #776e65;
+  color: white;
+  font-weight: bold;
+  font-size: 25px;
+  letter-spacing: 5px;
+  cursor: pointer;
+}
+.container,.cover {
+  width: 500px;
+  height: 500px;
+  background-color: #bbada0;
+  border-radius: 3px;
+  position: absolute;
+  right: 1%;
+  top: 3%;
+}
+.cover{
+    background-color: rgba(0, 0, 0, 0.573);
+    display: none;
+    justify-content: center;align-items: center;
+}
+.result{
+    color: snow;
+    font-weight: bold;
+    font-size: 80px;
+    letter-spacing: 20px;
+}
+.cell,
+.cloneCell {
+  width: 105px;
+  height: 105px;
+  margin: 15px 0 0 15px;
+  background-color: #cdc1b4;
+  float: left;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #776e65;
+}
+.cloneCell {
+  margin: 0;
+  transition: all 100ms ease;
+}
+
+/* 方块放大动画 */
+.spawn {
+  animation: spawn 200ms;
+}
+@keyframes spawn {
+  from {
+    transform: scale(0.5);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+

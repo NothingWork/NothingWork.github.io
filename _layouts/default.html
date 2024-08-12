@@ -16,6 +16,12 @@
     {%- include cat.html -%}
     <!-- 每日一言 -->
     <div id="content"></div>
+    <!-- 弹窗遮罩层 -->
+<div class="mask" id="mask"></div>
+  <!-- 弹窗组件 -->
+  <div id="parts" style="display: none;">
+    {%- include 2048.html -%}
+  </div>
   </body>
 </html>
 
@@ -25,10 +31,32 @@
   function goSite(site) {
     window.location.href = site;
   }
-  // 获取每日一言
+  //获取每日一言
   $(function(){
     $.get("https://api.xygeng.cn/one",(res)=>{
       if(res.code===200)$("#content").text("✍"+res.data.content+"——"+res.data.origin)
     })
   })
+
+// 判断是不是第一次点击
+var isInit = true
+
+  // 监听点击事件
+  $("#mask").click(function(){
+      // 隐藏遮罩层
+      $("#mask").hide();
+      $("#parts").hide();
+    })
+    $("#2048Btn").click(function(){
+      // 展示遮罩层
+      $("#mask").show();
+      // 展示组件
+      $("#parts").show();
+      // 初始化
+      if(isInit){
+        gameInit();
+        isInit = !isInit; 
+      }
+    })
+
 </script>
