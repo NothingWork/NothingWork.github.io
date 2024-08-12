@@ -62,13 +62,17 @@ window.addEventListener("keyup", function (e) {
 
 //为单元格初始化数字: 个数,2所占比例
 function genNum(size, prop) {
-  // 随机在两个坐标生成初始数e
-  let sucNum = 0; //标记生成成功的数量
-  let count = 0; //遍历计数
+  // 随机在两个坐标生成初始数
+  let sucNum = 0, //标记生成成功的数量 
+  count = 0, //遍历计数
+  nums = [];//已经生成的数
   while (1) {
     count++;
     // 随机选择一个格子
     const index = Math.floor(Math.random() * colnum * rownum);
+    // 生成随机数重复
+    if(nums.includes(index)) continue;
+    nums.push(index)
     const cell = cells[index];
     //格子全满
     if (count == colnum * rownum) {
@@ -139,8 +143,9 @@ function move(x, y) {
         //记录之前的0个数
         const z = countZero;
         //清空自己
-        cells[index].innerHTML = "";
-        cells[index].className = "cell";
+        changeCell(index,0,false)
+        // cells[index].innerHTML = "";
+        // cells[index].className = "cell";
         //创造并添加克隆节点
         const node = document.createElement("div");
         node.className = "cloneCell n" + num;
