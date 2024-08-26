@@ -16,10 +16,10 @@
 <style>
   .loader-bg {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background-color: #eddbdb;
     z-index: 9999;
-    position: absolute;
+    position: fixed;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -27,8 +27,8 @@
   .loader span{
     font-size: 50px;
     letter-spacing: 8px;
-    animation: wave 3s ease-in-out infinite;
-    animation-delay: calc(0.3s * var(--i));
+    animation: wave 2s ease-in-out infinite;
+    animation-delay: calc(0.2s * var(--i));
   }
   /* 文字波浪动画 */
   @keyframes wave{
@@ -44,7 +44,7 @@
   }
 </style>
 <script>
-  window.onload = function () {
-    $("#loader_bg").fadeOut();
-  };
+  // window.onload = function () {
+  //   $("#loader_bg").fadeOut();
+  // };
 </script>
