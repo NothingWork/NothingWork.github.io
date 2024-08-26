@@ -1,0 +1,50 @@
+<div class="loader-bg" id="loader_bg">
+  <div class="loader">
+    <span style="--i:1">L</span>
+    <span style="--i:2">O</span>
+    <span style="--i:3">A</span>
+    <span style="--i:4">D</span>
+    <span style="--i:5">I</span>
+    <span style="--i:6">N</span>
+    <span style="--i:7">G</span>
+    <span style="--i:8">.</span>
+    <span style="--i:9">.</span>
+    <span style="--i:10">.</span>
+  </div>
+</div>
+
+<style>
+  .loader-bg {
+    width: 100%;
+    height: 100vh;
+    background-color: #eddbdb;
+    z-index: 9999;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .loader span{
+    font-size: 50px;
+    letter-spacing: 8px;
+    animation: wave 1s ease-in-out infinite;
+    animation-delay: calc(0.1s * var(--i));
+  }
+  /* 文字波浪动画 */
+  @keyframes wave{
+    0%{
+        color: white;
+    }
+    20%{
+        color: black;
+    }
+    40%,100%{
+        color: white;
+    }
+  }
+</style>
+<script>
+  window.onload = function () {
+    $("#loader_bg").fadeOut();
+  };
+</script>

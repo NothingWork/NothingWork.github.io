@@ -1,20 +1,29 @@
 ---
 layout: default
 ---
-
+<!-- 文章主体 -->
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
+    <!-- 标题 -->
     <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
-    <p class="post-meta">
+    <!-- 时间和分类 -->
+    <div class="post-meta">
       <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
         {%- assign date_format = "%Y-%m-%-d" -%}
         {{ page.date | date: date_format }}
       </time>
+      <div class="post-category">{{ page.category }}</div>
+      </div>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
     {{ content }}
+  </div>
+
+  <!-- 文章结尾标志 -->
+  <div class="post-end">
+    🌹
   </div>
 </article>
 

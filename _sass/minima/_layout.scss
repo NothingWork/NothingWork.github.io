@@ -1,6 +1,3 @@
-
-
-
 .page-heading {
   @include relative-font-size(2);
 }
@@ -20,12 +17,36 @@
 
 
 /**
- * Posts
+ * Posts 文章头部
  */
 .post-header {
   margin-bottom: $spacing-unit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px dashed black;
+  .post-meta{
+    display: flex;
+    time,.post-category{
+      background-color: bisque;
+      margin: 0 10px;
+      padding:0 3px; 
+    }
+    time{
+      &::before{
+        content: "时间: ";
+      }
+    }
+    .post-category{
+    &::before{
+      content: "分类: ";
+    }
+    }
+  }
 }
 
+// 文章具体内容中的标题样式
 .post-title {
   @include relative-font-size(2.625);
   letter-spacing: -1px;
@@ -33,6 +54,15 @@
 
   @include media-query($on-laptop) {
     @include relative-font-size(2.25);
+  }
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  border-left: 5px solid black;
+  border-right: 5px solid black;
+  &::after{
+    content: "🤛";
+  }
+  &::before{
+   content: "🤜";
   }
 }
 
@@ -64,6 +94,12 @@
   }
 }
 
+.post-end{
+  width: 100%;
+  border-top: 2px dashed black;
+  margin-bottom: 2em;
+  text-align: center;
+}
 
 // 主页文章目录显示
 .articleList{
