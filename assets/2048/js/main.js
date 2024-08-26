@@ -74,6 +74,7 @@ function genNum(size, prop) {
     const index = Math.floor(Math.random() * colnum * rownum);
     // 生成随机数重复
     if (nums.includes(index)) {
+      count--;
       //格子全满
       if (count == colnum * rownum) {
         //检查是否失败

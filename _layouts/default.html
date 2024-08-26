@@ -34,11 +34,11 @@
     window.location.href = site;
   }
   //获取每日一言
-  // $(function(){
-  //   $.get("https://api.xygeng.cn/one",(res)=>{
-  //     if(res.code===200)$("#content").text("✍"+res.data.content+"——"+res.data.origin)
-  //   })
-  // })
+  $(function(){
+    $.get("https://api.xygeng.cn/one",(res)=>{
+      if(res.code===200)$("#content").text("✍"+res.data.content+"——"+res.data.origin)
+    })
+  })
 
 // 判断是不是第一次点击
 var isInit = true
