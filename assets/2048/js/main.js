@@ -1,6 +1,7 @@
 // html元素选择
 var cells = document.querySelectorAll(".cell"),
   cover = document.getElementById("cover"),
+  mask = document.getElementById("mask")
   result = document.getElementById("result");
 // 网格数据
 var data = [], //数字组
@@ -30,7 +31,9 @@ function clearAll() {
 }
 
 // 监听键盘事件
-window.addEventListener("keyup", function (e) {
+window.addEventListener("keydown", function (e) {
+  if(mask.style.display == "none") return
+  else e.preventDefault();//阻止默认触发事件造成的文章上下移动
   let //移动方向
     x = 0,
     y = 0,

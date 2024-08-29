@@ -24,7 +24,7 @@ $table-text-align: left !default;
 // Width of the content area
 $content-width:    800px !default;
 
-$on-phone:          1500px !default; // 移动设备界限
+$on-phone:          1300px !default; // 移动设备界限小于这个数值视为移动设备
 $on-laptop: 800px !default; //适配平板
 
 // 卡片使用的透明白色
