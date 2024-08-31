@@ -21,7 +21,6 @@ function gameInit() {
   // 随机为两个格子生成随机数
   genNum(2, 0.8);
 }
-
 // 清除所有网格
 function clearAll() {
   cells.forEach((cell) => {
@@ -32,13 +31,12 @@ function clearAll() {
 
 // 监听键盘事件
 window.addEventListener("keydown", function (e) {
-  if(mask.style.display == "none") return
-  else e.preventDefault();//阻止默认触发事件造成的文章上下移动
   let //移动方向
     x = 0,
     y = 0,
     ifMove = true, //是否移动了，默认为true
     currentTime = new Date().getTime(); //当前时间
+    if(mask.style.display == "none") ifMove = false
   switch (e.key) {
     case "ArrowUp":
       y--;

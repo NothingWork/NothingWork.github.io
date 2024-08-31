@@ -162,11 +162,11 @@ background-color: rgba(255, 255, 255, 0.705);
 .searchResult{
   position: fixed;
   left: 50%; top: 10%; 
-  width: 40%;
+  width:75%;
   transform: translateX(-50%);
-  background-color: white;
+  background-color: bisque;
   display: block;
-  max-height: 300px;
+  max-height: 600px;
   overflow-y: auto;
   border-radius: 5px;
   box-shadow: 0 0 10px gray;
@@ -181,9 +181,18 @@ background-color: rgba(255, 255, 255, 0.705);
     width: 90%;
     box-shadow: 0 0 5px gray;
     border-radius: 5px;
-    margin: 10px 5%;
+    margin: 10px 2.5em;
+    padding: 1em;
+    &:hover{
+      color: $blue-color;
+    }
     h2{
       border-bottom: 1px solid gainsboro;
+    }
+    @include media-query($on-phone){
+      left: 0.8em;
+      margin: 0;
+      padding: 0;
     }
   } 
   @include media-query($on-phone){

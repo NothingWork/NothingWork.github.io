@@ -34,7 +34,7 @@ xhr.onreadystatechange = function () {
     if (!xml)
       // xml 验证
       return;
-    arrItems = xml.getElementsByTagName("item");
+   var arrItems = xml.getElementsByTagName("item");
     itemLength = arrItems.length;
     // 遍历并保存所有文章对应的标题、链接、内容到对应的数组中
     // 同时过滤掉 HTML 标签，保存结果为纯文本
