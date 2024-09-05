@@ -7,17 +7,13 @@
     <!-- 头部区域 -->
       {%- include header.html -%}
     <!-- 主体内容区域 -->
-    <main >
-      <!-- 搜索结果区域 -->
-      {%- include search.html -%}
+    <main>
       <div class="wrapper">
         {{ content }}
       </div>
     </main>
-    <!-- 猫猫装饰 -->
-    {%- include cat.html -%}
     <!-- 每日一言 -->
-    <div id="content"></div>
+    <!-- <div id="content"></div> -->
     <!-- 弹窗遮罩层 -->
 <div class="mask" id="mask"></div>
   <!-- 弹窗组件 -->
@@ -34,9 +30,14 @@
     window.location.href = site;
   }
   //获取每日一言
-  $(function(){
+  $(function getContent(){
     $.get("https://api.xygeng.cn/one",(res)=>{
-      if(res.code===200)$("#content").text("✍"+res.data.content+"——"+res.data.origin)
+      if(res.code===200){
+        var content =""+ res.data.content;
+        if(content.length>100) getContent()
+        else $("#content").text("✍"+content+"——"+res.data.origin)
+      }
+      else $("#content").text("获取失败")
     })
   })
 

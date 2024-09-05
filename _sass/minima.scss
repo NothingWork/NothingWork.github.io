@@ -3,7 +3,7 @@
 // Define defaults for each variable.
 
 $base-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
-$base-font-size:   16px !default;
+$base-font-size:   20px !default;
 $base-font-weight: 400 !default;
 $small-font-size:  $base-font-size * 0.875 !default;
 $base-line-height: 1.5 !default;
@@ -28,7 +28,7 @@ $on-phone:          1300px !default; // 移动设备界限小于这个数值视�
 $on-laptop: 800px !default; //适配平板
 
 // 卡片使用的透明白色
-$card-white:rgba(255, 255, 255, 0.705);
+$card-white:rgba(255, 255, 255, 0.63);
 
 
 // Use media queries like this:

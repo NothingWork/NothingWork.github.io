@@ -28,7 +28,7 @@ body {
   flex-direction: column;
 
   // 网站背景
- background-image: url("/assets/bg/1.webp");
+ background-image: url("/assets/bg/3.webp");
  background-size: cover;
  background-position: center center;
  background-attachment: fixed;
@@ -149,20 +149,26 @@ pre {
  * Wrapper
  */
 .wrapper {
-  max-width: 70%;
-  margin-right: auto;
-  margin-left: auto;
+  width: 60%;
+  float: right;
+  margin-right: 5%;
+  margin-top: 2%;
+  // margin-right: auto;
+  // margin-left: auto;
   margin-bottom: 20px;
   padding-right: $spacing-unit;
   padding-left: $spacing-unit;
   @extend %clearfix;
-
   @include media-query($on-phone) {
-    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
-    max-width:         calc(#{$content-width} - (#{$spacing-unit}));
-    padding-right: $spacing-unit / 2;
-    padding-left: $spacing-unit / 2;
-  }
+    width: 90%;
+    float: none;
+      margin-right: auto;
+      margin-left: auto;
+      max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
+      max-width:         calc(#{$content-width} - (#{$spacing-unit}));
+      padding-right: $spacing-unit / 2;
+      padding-left: $spacing-unit / 2;
+  } 
   background-color: $card-white;
   border-radius: 15px;
   padding-top: 5px;
