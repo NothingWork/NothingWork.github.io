@@ -60,10 +60,10 @@
   border-left: 5px solid black;
   border-right: 5px solid black;
   &::after{
-    content: "🤛";
+    content: "◾";
   }
   &::before{
-   content: "🤜";
+   content: "◾";
   }
 }
 
