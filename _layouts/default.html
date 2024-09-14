@@ -27,17 +27,6 @@
   function goSite(site) {
     window.location.href = site;
   }
-  //获取每日一言
-  $(function getContent(){
-    $.get("https://api.xygeng.cn/one",(res)=>{
-      if(res.code===200){
-        var content =""+ res.data.content;
-        if(content.length>100) getContent()
-        else $("#content").text("✍"+content+"——"+res.data.origin)
-      }
-      else $("#content").text("获取失败")
-    })
-  })
 
 // 判断是不是第一次点击
 var isInit = true

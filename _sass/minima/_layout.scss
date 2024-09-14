@@ -288,3 +288,11 @@ background-color: rgba(255, 255, 255, 0.705);
     overflow: hidden;
   }
 }
+
+  //  文章区域加载背景图 
+  .post_loader_bg{
+    width: 50%;
+    @include media-query($on-phone){
+      display: none;
+    }
+  }

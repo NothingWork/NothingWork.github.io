@@ -4,7 +4,7 @@ layout: default
 
 <div style="display: block">
   <!-- 循环遍历渲染文章 -->
-  {%- for post in paginator.posts -%}
+  {%- for post in site.posts -%}
   <div class="articleList">
     <!--文章标题  -->
     <a href="{{ post.url | relative_url }}">
@@ -45,17 +45,10 @@ layout: default
     </a>
   </div>
   {%- endfor -%}
-  <!-- 分页区域 -->
-  <div
-    style="
-      align-items: center;
-      justify-content: center;
-      display: flex;
-      flex-direction: column;
-    "
-  >
-    {%- include page.html -%}
-  </div>
 </div>
 
-<script></script>
+<script>
+</script>
+
+<style>
+</style>

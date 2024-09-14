@@ -29,7 +29,7 @@ permalink: "/:title"
 permalink_defaults:
   category: "blog"
 # 分页每页最大文章数
-paginate: 5 
+# paginate: 5 
 
 # Build settings
 theme: minima #主题
