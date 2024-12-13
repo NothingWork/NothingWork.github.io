@@ -2,14 +2,13 @@
  * Syntax highlighting styles
  */
 .highlight {
-  background: #fff;
+  background: whitesmoke;
   @extend %vertical-rhythm;
-
   .highlighter-rouge & {
     > pre{
-      border: 1px solid $grey-color-light;
+      border-radius: 15px;
     }
-    background: #eef;
+    // background: rgba(0, 0, 0, 0.548);
   }
 
   .c     { color: rgb(10, 137, 14); font-style: italic } // Comment

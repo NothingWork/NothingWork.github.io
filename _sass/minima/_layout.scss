@@ -93,6 +93,12 @@
       @include relative-font-size(1.125);
     }
   }
+  // 新段落开头
+  p {
+    &::before{
+      content: "✏";
+    }
+  }
 }
 
 .post-end{
