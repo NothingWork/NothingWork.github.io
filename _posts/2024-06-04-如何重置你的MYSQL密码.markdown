@@ -13,20 +13,25 @@ category: mysql
 ### 关闭正在运行的MySQL服务
 
 在任务管理器中找到MySQL对应的服务,然后将其停止
-![1](/pictures/001/1.png)
+
+{% include img.html src="/001/1.png" alt="" %}
+<!-- ![1](/pictures/001/1.png) -->
 
 ### 跳过权限认证
 
 打开CMD命令行窗口，转到mysql\bin目录  
 输入mysqld --skip-grant-tables 回车
 
-![2](/pictures/001/3.png)
+{% include img.html src="/001/3.png" alt="" %}
+<!-- ![2](/pictures/001/3.png) -->
 
 ### 连接MySQL
 
 再开一个CMD命令行窗口（因为刚才那个DOS窗口已经不能动了），并转到mysql\bin目录
 输入mysql回车，如果成功，将出现MySQL提示符界面
-![3](/pictures/001/4.png)
+
+{% include img.html src="/001/4.jpg" alt="" %}
+<!-- ![3](/pictures/001/4.png) -->
 
 ### 连接权限数据库表
 
@@ -34,7 +39,8 @@ category: mysql
 use mysql;
 ```
 
-![4](/pictures/001/5.png)
+{% include img.html src="/001/5.jpg" alt="" %}
+<!-- ![4](/pictures/001/5.png) -->
 
 ### 改密码
 
@@ -44,7 +50,8 @@ use mysql;
 UPDATE user SET authentication_string=PASSWORD("root") WHERE User="root";
 ```
 
-![5](/pictures/001/7.png)
+{% include img.html src="/001/7.jpg" alt="" %}
+<!-- ![5](/pictures/001/7.png) -->
 
 > mysql5.7以前的版本请使用 ··update user set password=password("root") where user="root";··
 
@@ -56,7 +63,8 @@ UPDATE user SET authentication_string=PASSWORD("root") WHERE User="root";
 flush privileges;
 ```
 
-![6](/pictures/001/8.png)
+{% include img.html src="/001/8.jpg" alt="" %}
+<!-- ![6](/pictures/001/8.png) -->
 
 ### 修改完成
 

@@ -1,0 +1,12 @@
+{% if include.src %}
+  {% capture img_src %}/pictures{{ include.src }}{% endcapture %}
+  <img data-src="{{img_src | relative_url}}" class="lozad" alt="{{include.alt | default: ''}}" />
+{% endif %}
+
+<!-- 引入图片懒加载 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.js"></script>
+<script>
+
+const observer = lozad();
+observer.observe();
+</script>
