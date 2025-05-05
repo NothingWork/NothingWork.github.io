@@ -6,12 +6,17 @@
         {%- include loading.html -%}
     <!-- 头部区域 -->
       {%- include header.html -%}
+
+      <!-- 侧边栏 -->
+      <img class="aside-man" src="/assets/bg/fl.webp" id="aside_man">
+  </img>
     <!-- 主体内容区域 -->
     <main>
       <div class="wrapper">
         {{ content }}
       </div>
     </main>
+
     <!-- 弹窗遮罩层 -->
 <div class="mask" id="mask"></div>
   <!-- 弹窗组件 -->
@@ -49,4 +54,27 @@ var isInit = true
       }
     })
 
+// 背景分组
+const bgs = [
+  {
+    "bg":"#dd465b",
+    "img":"/assets/bg/fll.webp"
+  },
+  {
+    "bg":"#db6053",
+    "img":"/assets/bg/fl.webp"
+  }
+]
+
+// 网站随机背景颜色
+// 生成随机颜色的函数
+function getRandomBg() {
+  const num = Math.floor(Math.random() * 2)
+  document.body.style.backgroundColor = bgs[num].bg;
+  document.getElementById("aside_man").setAttribute("src",bgs[num].img)
+}
+
+
+// 页面加载时调用函数
+window.addEventListener('load', getRandomBg);
 </script>

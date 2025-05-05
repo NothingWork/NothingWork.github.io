@@ -1,5 +1,5 @@
 #!/bin/bash
-# 使用方法：sh blog.sh [文章名] [分类名]
+# 使用方法：sh blog.sh 文章名 分类名
 current_date=$(date +"%Y-%m-%d")
 current_time=$(date +"%Y-%m-%d %H:%M:%S") 
 file_name="$1"

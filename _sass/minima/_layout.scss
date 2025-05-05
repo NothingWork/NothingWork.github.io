@@ -302,3 +302,13 @@ background-color: rgba(255, 255, 255, 0.705);
       display: none;
     }
   }
+
+  // 左上头部提示条
+  .header-tip{
+    background-color: $grey-color;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    margin-left: 10px;
+    border: 3px solid $grey-color;
+  }
