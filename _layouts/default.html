@@ -26,7 +26,8 @@
   </body>
 </html>
 
-
+<!-- 引入鼠标点击特效 -->
+<script src="/assets/plugins/click.js"></script>
 <script>
   // 页面加载时调用函数
 window.addEventListener('load', getRandomBg);
@@ -110,11 +111,6 @@ function getRandomBg() {
   aside_man.setAttribute("src",bgs[num].img)
 }
 
-// 加载完成后执行动画
-window.onload = function(){
-  // 加载图消失
-  $("#loader_bg").fadeOut();
-  // aside_man.classList.add('move-up')
-}
+
 
 </script>

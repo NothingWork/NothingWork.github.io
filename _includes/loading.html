@@ -57,4 +57,10 @@
     const randomIndex = Math.floor(Math.random() * 13);
     document.getElementById("loader_text").innerHTML = emojis[randomIndex];
   }
+
+  // 加载完成后执行动画
+window.onload = function(){
+  // 加载图消失
+  $("#loader_bg").fadeOut();
+}
 </script>
