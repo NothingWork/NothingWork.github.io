@@ -27,11 +27,6 @@ body {
   min-height: 100vh;
   flex-direction: column;
 
-  // 网站背景
-//  background-image: url("/assets/bg/3.webp");
-// background-color: #dd465b;
-background-color: #db6053;
-  // background-image:linear-gradient(-225deg,#9EFBD3 0%, #57E9F2 48%, #45D4FB 100%)
 }
 
 
@@ -326,7 +321,6 @@ pre:not(.highlight){
   bottom: 0;
   width: auto;
   height: 80%;
-  animation: moveUp 0.5s ease-in-out ;
   z-index: -999;
 }
 
@@ -337,4 +331,8 @@ pre:not(.highlight){
   to {
       transform: translateY(0); /* 结束位置：移动到顶部 */
   }
+}
+
+.move-up{
+  animation: moveUp 0.5s ease-in-out ;
 }

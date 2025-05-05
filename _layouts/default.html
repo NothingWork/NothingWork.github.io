@@ -28,10 +28,15 @@
 
 
 <script>
+  // 页面加载时调用函数
+window.addEventListener('load', getRandomBg);
   // 按钮跳转网页的功能
   function goSite(site) {
     window.location.href = site;
   }
+
+// 背景元素
+var aside_man = document.getElementById("aside_man")
 
 // 判断是不是第一次点击
 var isInit = true
@@ -63,18 +68,53 @@ const bgs = [
   {
     "bg":"#db6053",
     "img":"/assets/bg/fl.webp"
+  },
+  {
+    "bg":"#db2e2d",
+    "img":"/assets/bg/art1.webp"
+  },
+  {
+    "bg":"#000000",
+    "img":"/assets/bg/cat1.webp"
+  },
+  {
+    "bg":"#0b0e16",
+    "img":"/assets/bg/code1.webp"
+  },
+  {
+    "bg":"#000000",
+    "img":"/assets/bg/spider1.webp"
+  },
+  {
+    "bg":"#000000",
+    "img":"/assets/bg/art2.webp"
+  },
+  {
+    "bg":"#c1c1c1",
+    "img":"/assets/bg/art3.webp"
+  },
+  {
+    "bg":"#3b3b3b",
+    "img":"/assets/bg/kkx.webp"
+  },
+  {
+    "bg":"#ada8ae",
+    "img":"/assets/bg/art4.webp"
   }
 ]
 
-// 网站随机背景颜色
-// 生成随机颜色的函数
+// 网站随机背景
 function getRandomBg() {
-  const num = Math.floor(Math.random() * 2)
+  const num = Math.floor(Math.random() * 10)
   document.body.style.backgroundColor = bgs[num].bg;
-  document.getElementById("aside_man").setAttribute("src",bgs[num].img)
+  aside_man.setAttribute("src",bgs[num].img)
 }
 
+// 加载完成后执行动画
+window.onload = function(){
+  // 加载图消失
+  $("#loader_bg").fadeOut();
+  aside_man.classList.add('move-up')
+}
 
-// 页面加载时调用函数
-window.addEventListener('load', getRandomBg);
 </script>
