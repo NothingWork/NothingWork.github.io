@@ -322,6 +322,7 @@ pre:not(.highlight){
   width: auto;
   height: 80%;
   z-index: -999;
+  animation: moveUp 0.5s ease-in-out ;
 }
 
 @keyframes moveUp {
@@ -334,5 +335,5 @@ pre:not(.highlight){
 }
 
 .move-up{
-  animation: moveUp 0.5s ease-in-out ;
+  // animation: moveUp 0.5s ease-in-out ;
 }
