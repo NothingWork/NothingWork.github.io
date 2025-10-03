@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "双显示器模式下e，使用rainmeter制作的副屏定时切换壁纸"
+title: "双显示器模式下，使用rainmeter制作的副屏定时切换壁纸"
 date: 2025-09-27 11:42:35 +0800
 category: RainMeter
 ---
