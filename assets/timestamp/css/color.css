@@ -1,0 +1,84 @@
+/* 时间戳工具的颜色主题 */
+
+.converter-section:nth-child(1) {
+  border-left: 5px solid #4CAF50;
+}
+
+.converter-section:nth-child(2) {
+  border-left: 5px solid #2196F3;
+}
+
+.convert-btn {
+  background: linear-gradient(145deg, #776e65, #8b7355);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.convert-btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.result-display.success {
+  background-color: #e8f5e8;
+  border-color: #4CAF50;
+  color: #2e7d32;
+}
+
+.result-display.error {
+  background-color: #ffebee;
+  border-color: #f44336;
+  color: #c62828;
+}
+
+.result-display.highlight {
+  background-color: #fff3e0;
+  border-color: #ff9800;
+  color: #ef6c00;
+}
+
+.current-time {
+  background: linear-gradient(145deg, #f0e68c, #daa06d);
+}
+
+.time-display div:nth-child(1) span {
+  color: #4CAF50;
+}
+
+.time-display div:nth-child(2) span {
+  color: #2196F3;
+}
+
+.time-display div:nth-child(3) span {
+  color: #ff9800;
+}
+
+.refresh-btn {
+  background: linear-gradient(145deg, #daa06d, #c6955a);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.refresh-btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* 输入框聚焦效果 */
+.input-group input:focus, .input-group select:focus {
+  outline: none;
+  border-color: #4CAF50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+}
+
+/* 结果动画效果 */
+.result-display {
+  transition: all 0.3s ease;
+}
+
+.result-display.flash {
+  animation: flash 0.5s ease-in-out;
+}
+
+@keyframes flash {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; transform: scale(1.02); }
+}

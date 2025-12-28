@@ -20,8 +20,13 @@
     <!-- 弹窗遮罩层 -->
 <div class="mask" id="mask"></div>
   <!-- 弹窗组件 -->
-  <div id="parts" style="display: none;">
+   <!-- 2048游戏 -->
+  <div id="2048-part" style="display: none;">
     {%- include 2048.html -%}
+  </div>
+     <!-- 时间戳 -->
+  <div id="time-part" style="display: none;">
+    {%- include timestamp.html -%}
   </div>
   </body>
 </html>
@@ -46,19 +51,28 @@ var isInit = true
   $("#mask").click(function(){
       // 隐藏遮罩层
       $("#mask").hide();
-      $("#parts").hide();
+      $("#2048-part").hide();
+      $("#time-part").hide();
     })
     $("#2048Btn").click(function(){
       // 展示遮罩层
       $("#mask").show();
       // 展示组件
-      $("#parts").show();
+      $("#2048-part").show();
       // 初始化
       if(isInit){
         gameInit();
         isInit = !isInit; 
       }
     })
+    $("#timeBtn").click(function(){
+      // 展示遮罩层
+      $("#mask").show();
+      // 展示组件
+      $("#time-part").show();
+    })
+
+
 
 // 背景分组
 const bgs = [

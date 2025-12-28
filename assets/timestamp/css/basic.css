@@ -1,0 +1,242 @@
+/* 基础图形 */
+.time-main {
+  width: 1000px;
+  height: 700px;
+  background-color: bisque;
+  position: fixed;
+  left: 50%;
+  top: 5%;
+  transform: translate(-50%);
+  border-radius: 15px;
+  border: 5px dashed #daa06d;
+  box-shadow: 0 0 0 4px bisque;
+  padding: 5px;
+}
+
+.tool_title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 48px;
+  font-weight: bold;
+  color: #776e65;
+  top: 2%;
+  text-align: center;
+}
+
+.info {
+  position: absolute;
+  top: 12%;
+  left: 10%;
+  width: 300px;
+  font-size: 18px;
+  color: #776e65;
+}
+
+.converter-container {
+  position: absolute;
+  top: 20%;
+  left: 5%;
+  width: 90%;
+  height: 65%;
+}
+
+.converter-panel {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background-color: #f5f5dc;
+  border-radius: 10px;
+  border: 2px solid #daa06d;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+/* 左侧输入区域 */
+.input-section {
+  width: 50%;
+  padding: 30px;
+  border-right: 2px solid #daa06d;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.converter-row {
+  margin-bottom: 20px;
+}
+
+.converter-row:last-child {
+  margin-bottom: 0;
+}
+
+.converter-row h3 {
+  color: #776e65;
+  margin-top: 0;
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #776e65;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.input-group input, .input-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #daa06d;
+  border-radius: 5px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.convert-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  background-color: #776e65;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  transition: background-color 0.3s;
+}
+
+.convert-btn:hover {
+  background-color: #8b7355;
+}
+
+/* 右侧结果区域 */
+.result-section {
+  width: 50%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.result-section h3 {
+  color: #776e65;
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.result-tabs {
+  display: flex;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid #daa06d;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background-color: #f0e68c;
+  color: #776e65;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 12px;
+}
+
+.tab-btn.active {
+  background-color: #daa06d;
+  color: white;
+}
+
+.tab-btn:hover:not(.active) {
+  background-color: #ede4c8;
+}
+
+.result-content {
+  flex: 1;
+  position: relative;
+}
+
+.result-display {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  border: 1px solid #daa06d;
+  border-radius: 5px;
+  padding: 15px;
+  font-family: 'Courier New', monospace;
+  color: #333;
+  word-break: break-all;
+  overflow-y: auto;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.result-display.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.current-time {
+  width: 90%;
+  background-color: #f0e68c;
+  border-radius: 10px;
+  padding: 20px;
+  border: 2px solid #daa06d;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+
+.time-display {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  float: left;
+  margin-bottom: 15px;
+}
+
+.time-display div {
+  text-align: left;
+  color: #776e65;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+}
+
+.time-display span {
+  text-align: right;
+  font-weight: bold;
+  color: #333;
+}
+
+.refresh-btn {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #daa06d;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.refresh-btn:hover {
+  background-color: #c6955a;
+}

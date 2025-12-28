@@ -1,0 +1,80 @@
+<head>
+  <!-- 引入css -->
+  <link rel="stylesheet" href="/assets/timestamp/css/basic.css" />
+  <link rel="stylesheet" href="/assets/timestamp/css/color.css" />
+</head>
+<div class="time-main">
+  <!-- 标题 -->
+  <div class="tool_title">时间戳转换工具</div>
+
+  <!-- 转换区域 -->
+  <div class="converter-container">
+    <!-- 统一转换面板 -->
+    <div class="converter-panel">
+      <!-- 左侧输入区域 -->
+      <div class="input-section">
+        <!-- 时间戳转日期 -->
+        <div class="converter-row">
+          <h3>时间戳 → 日期</h3>
+          <div class="input-group">
+            <label for="timestamp-input">时间戳:</label>
+            <input
+              type="number"
+              id="timestamp-input"
+              placeholder="请输入时间戳"
+            />
+            <select id="timestamp-unit">
+              <option value="秒">秒</option>
+              <option value="毫秒">毫秒</option>
+            </select>
+          </div>
+          <button class="convert-btn" onclick="timestampToDate()">
+            转换为日期
+          </button>
+        </div>
+
+        <!-- 日期转时间戳 -->
+        <div class="converter-row">
+          <h3>日期 → 时间戳</h3>
+          <div class="input-group">
+            <label for="date-input">日期时间:</label>
+            <input type="datetime-local" id="date-input" />
+          </div>
+          <button class="convert-btn" onclick="dateToTimestamp()">
+            转换为时间戳
+          </button>
+        </div>
+      </div>
+
+      <!-- 右侧结果区域 -->
+      <div class="result-section">
+        <h3>转换结果</h3>
+        <!-- 选择结果显示区域 -->
+        <div class="result-tabs">
+          <button class="tab-btn active" onclick="showResult('date')">
+            时间戳→日期
+          </button>
+          <button class="tab-btn" onclick="showResult('timestamp')">
+            日期→时间戳
+          </button>
+        </div>
+        <!-- 转换结果文本区域 -->
+        <div class="result-content">
+          <div id="date-result" class="result-display active"></div>
+          <div id="timestamp-result" class="result-display"></div>
+        </div>
+        <h3>当前时间</h3>
+        <!-- 当前时间显示 -->
+        <div class="current-time">
+          <div class="time-display">
+            <div>日期时间: <span id="current-date"></span></div>
+            <div>时间戳(秒): <span id="current-timestamp-sec"></span></div>
+            <div>时间戳(毫秒): <span id="current-timestamp-ms"></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 引入js -->
+<script src="/assets/timestamp/js/main.js"></script>
